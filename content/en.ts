@@ -3,9 +3,9 @@ import type { Content } from "./nl";
 
 export const en: Content = {
   lang: "en",
-  routes: { home: "/en", masterclass: "/en/masterclass", thanks: "/en/thank-you" },
-  other: { label: "NL", name: "Nederlands", home: "/", masterclass: "/masterclass", thanks: "/bedankt" },
-  ids: { start: "start", form: "signup", handbook: "handbook", masterclass: "masterclass", challenge: "challenge", about: "about-trude" },
+  routes: { home: "/en", masterclass: "/en/masterclass", thanks: "/en/thank-you", blog: "/en/blog" },
+  other: { label: "NL", name: "Nederlands", home: "/", masterclass: "/masterclass", thanks: "/bedankt", blog: "/blog" },
+  ids: { offer: "programmes", start: "start", form: "signup", handbook: "handbook", masterclass: "masterclass", challenge: "challenge", about: "about-trude" },
 
   meta: {
     homeTitle: "TrudeThecla | ROOTS",
@@ -34,7 +34,8 @@ export const en: Content = {
   },
 
   nav: {
-    cta: "Free handbook",
+    programs: "Programmes",
+    blog: "Blog",
     start: "Start here",
     handbook: "The handbook",
     masterclass: "Masterclass",
@@ -44,30 +45,42 @@ export const en: Content = {
 
   hero: {
     eyebrow: "ROOTS | Start here",
-    titleBefore: "Lasting change doesn't have to be ",
-    titleHighlight: "a struggle",
-    titleAfter: " with yourself.",
-    intro:
-      "With the ROOTS method, you uncouple your patterns at the source – grounded in your biology – so you can move again from who you truly are.",
-    bullets: [
-      "Patterns released at the source, not just the symptoms",
-      "Grounded in biology, body and nervous system",
-      "Gentle, natural and at your own pace",
-      "Results that last, without draining all your strength",
-    ],
-    primary: "Start here — download the free handbook",
+    title: "Lasting change doesn't have to be a struggle with yourself.",
+    p1: "You know your pattern. You understand where it comes from. And yet it comes back.",
+    p2: "In the free Pattern Reset Handbook, you discover why it keeps coming back – and where real change begins.",
     card: {
       eyebrow: "Free handbook",
       title: "The Pattern Reset Handbook",
       subtitle: "From insight to lasting change",
-      button: "Send me the free handbook",
-      note: "Your details are safe. No spam, ever.",
+      note: "You receive the handbook straight in your inbox.",
     },
   },
 
   band: {
     line1: "Change in a way your body can follow.",
     line2: "So you can live again from your natural flow.",
+  },
+
+  experience: {
+    title: "For more than thirty years, my work has revolved around people, health, behaviour and change.",
+    stats: [
+      { n: "300+", label: "trainings" },
+      { n: "500+", label: "coaching journeys" },
+      { n: "900+", label: "vitality consultations" },
+      { n: "1,200+", label: "career consultations" },
+    ],
+  },
+
+  offer: {
+    eyebrow: "Programmes",
+    title: "How to continue",
+    intro: "Step by step, at your own pace. Start with the handbook, or choose what suits you.",
+    cards: [
+      { step: "01 · Discover", title: "The Pattern Reset Handbook", tag: "Free", text: "The handbook helps you understand why old patterns can return, even when you already know a great deal about yourself.", cta: "Send me the free handbook", kind: "form" },
+      { step: "02 · Understand", title: "Masterclass: Switch off your pattern at the source", tag: "Free", text: "In the free masterclass, I take you through the connection between your biological survival system and recurring patterns.", cta: "You receive the masterclass after the handbook", kind: "note" },
+      { step: "03 · Experience", title: "Breakfree Challenge", tag: "7 days", text: "In the Breakfree Challenge, you work with one recurring pattern of your own.", cta: "More about the Breakfree Challenge", kind: "challenge" },
+      { step: "04 · ROOTS", title: "ROOTS online programme", tag: "Coming soon", text: "In 7 steps to a reset.", cta: "Coming soon", kind: "note" },
+    ],
   },
 
   recognition: {
@@ -166,6 +179,12 @@ export const en: Content = {
     title: "Thank you. The handbook is on its way to your inbox.",
     p: "Nothing there within a few minutes? Please check your spam or promotions folder too.",
     nextEyebrow: "Your next step · Understand",
+  },
+
+  blog: {
+    title: "Blog",
+    text: "Articles about patterns, change and the ROOTS method will appear here soon.",
+    metaTitle: "Blog · TrudeThecla | ROOTS",
   },
 
   footer: {

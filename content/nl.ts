@@ -2,9 +2,9 @@
 
 export const nl = {
   lang: "nl" as "nl" | "en",
-  routes: { home: "/", masterclass: "/masterclass", thanks: "/bedankt" },
-  other: { label: "EN", name: "English", home: "/en", masterclass: "/en/masterclass", thanks: "/en/thank-you" },
-  ids: { start: "start", form: "aanmelden", handbook: "handboek", masterclass: "masterclass", challenge: "challenge", about: "over-trude" },
+  routes: { home: "/", masterclass: "/masterclass", thanks: "/bedankt", blog: "/blog" },
+  other: { label: "EN", name: "English", home: "/en", masterclass: "/en/masterclass", thanks: "/en/thank-you", blog: "/en/blog" },
+  ids: { offer: "aanbod", start: "start", form: "aanmelden", handbook: "handboek", masterclass: "masterclass", challenge: "challenge", about: "over-trude" },
 
   meta: {
     homeTitle: "TrudeThecla | ROOTS",
@@ -33,7 +33,8 @@ export const nl = {
   },
 
   nav: {
-    cta: "Gratis handboek",
+    programs: "Programma's",
+    blog: "Blog",
     start: "Start hier",
     handbook: "Het handboek",
     masterclass: "Masterclass",
@@ -43,30 +44,71 @@ export const nl = {
 
   hero: {
     eyebrow: "ROOTS | Start hier",
-    titleBefore: "Blijvende verandering hoeft ",
-    titleHighlight: "geen strijd",
-    titleAfter: " met jezelf te zijn.",
-    intro:
-      "Met de ROOTS-methode ontkoppel je patronen bij de bron – gegrond in je biologie – zodat je weer kunt bewegen vanuit wie jij werkelijk bent.",
-    bullets: [
-      "Patronen los bij de bron, niet alleen de symptomen",
-      "Gegrond in biologie, lichaam en zenuwstelsel",
-      "Zacht, natuurlijk en in jouw tempo",
-      "Resultaat dat blijft, zonder dat het al je kracht kost",
-    ],
-    primary: "Start hier — download het gratis handboek",
+    title: "Blijvende verandering hoeft geen strijd met jezelf te zijn.",
+    p1: "Je kent je patroon. Je begrijpt waar het vandaan komt. En toch komt het terug.",
+    p2: "In het gratis Handboek Patroon-Reset ontdek je waarom het toch terugkomt – en waar echte verandering begint.",
     card: {
       eyebrow: "Gratis handboek",
       title: "Handboek Patroon-Reset",
       subtitle: "Van inzicht naar blijvende verandering",
-      button: "Stuur mij het gratis handboek",
-      note: "Je gegevens zijn veilig. Geen spam, ooit.",
+      note: "Je ontvangt het handboek direct in je mailbox.",
     },
   },
 
   band: {
     line1: "Veranderen op een manier die je lichaam kan volgen.",
     line2: "Zodat je weer kunt leven vanuit jouw natuurlijke stroom.",
+  },
+
+  experience: {
+    title: "Mijn werk draait al meer dan dertig jaar om mensen, gezondheid, gedrag en verandering.",
+    /* CIJFERS: overgenomen van je vorige website — controleren en zo nodig aanpassen */
+    stats: [
+      { n: "300+", label: "trainingen" },
+      { n: "500+", label: "coachingtrajecten" },
+      { n: "900+", label: "vitaliteitsadviezen" },
+      { n: "1.200+", label: "loopbaanadviezen" },
+    ],
+  },
+
+  offer: {
+    eyebrow: "Programma's",
+    title: "Zo kun je verder",
+    intro: "Stap voor stap, in jouw tempo. Begin bij het handboek, of kies wat bij je past.",
+    cards: [
+      {
+        step: "01 · Ontdek",
+        title: "Handboek Patroon-Reset",
+        tag: "Gratis",
+        text: "Het handboek helpt je begrijpen waarom oude patronen kunnen terugkomen, ook als je al veel over jezelf weet.",
+        cta: "Stuur mij het gratis handboek",
+        kind: "form",
+      },
+      {
+        step: "02 · Begrijp",
+        title: "Masterclass: Zet je patroon uit bij de bron",
+        tag: "Gratis",
+        text: "In de gratis masterclass neem ik je mee in de samenhang tussen je biologische overlevingssysteem en terugkerende patronen.",
+        cta: "Je ontvangt de masterclass na het handboek",
+        kind: "note",
+      },
+      {
+        step: "03 · Ervaar",
+        title: "Breakfree Challenge",
+        tag: "7 dagen",
+        text: "In de Breakfree Challenge ga je aan de slag met één terugkerend patroon van jezelf.",
+        cta: "Meer over de Breakfree Challenge",
+        kind: "challenge",
+      },
+      {
+        step: "04 · ROOTS",
+        title: "ROOTS online programma",
+        tag: "Binnenkort",
+        text: "In 7 stappen naar een reset.",
+        cta: "Binnenkort beschikbaar",
+        kind: "note",
+      },
+    ],
   },
 
   recognition: {
@@ -168,6 +210,12 @@ export const nl = {
     title: "Dank je wel. Het handboek is onderweg naar je inbox.",
     p: "Zie je niets binnen een paar minuten? Kijk dan ook in je spam- of reclamemap.",
     nextEyebrow: "Je volgende stap · Begrijp",
+  },
+
+  blog: {
+    title: "Blog",
+    text: "Binnenkort verschijnen hier artikelen over patronen, verandering en de ROOTS-methode.",
+    metaTitle: "Blog · TrudeThecla | ROOTS",
   },
 
   footer: {

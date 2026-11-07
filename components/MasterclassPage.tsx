@@ -30,7 +30,7 @@ export default function MasterclassPage({ c }: { c: Content }) {
             <div className="btn-row">
               <ChallengeLink lang={c.lang} className="btn btn-primary btn-arrow" message={c.ui.noSales}>{c.challenge.button}</ChallengeLink>
             </div>
-            <a className="text-link" href={`${c.routes.home}#${c.ids.handbook}`}>{c.masterclass.noHandbook}</a>
+            <a className="text-link" href={`${c.routes.home}#${c.ids.form}`}>{c.masterclass.noHandbook}</a>
           </div>
         </section>
       </main>

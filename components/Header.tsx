@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import type { Content } from "@/content/nl";
 import Logo from "./Logo";
 
-type Page = "home" | "masterclass" | "thanks";
+type Page = "home" | "masterclass" | "thanks" | "blog";
 
 export default function Header({ c, page }: { c: Content; page: Page }) {
   const [open, setOpen] = useState(false);
@@ -20,13 +20,13 @@ export default function Header({ c, page }: { c: Content; page: Page }) {
 
   const base = page === "home" ? "" : c.routes.home;
   const a = (id: string) => `${base}#${id}`;
-  const otherHref = page === "home" ? c.other.home : page === "masterclass" ? c.other.masterclass : c.other.thanks;
+  const otherHref = page === "home" ? c.other.home : page === "masterclass" ? c.other.masterclass : page === "blog" ? c.other.blog : c.other.thanks;
   const menuId = "hoofdmenu";
 
   const items = [
     { href: a(c.ids.form), label: c.nav.start },
-    { href: a(c.ids.handbook), label: c.nav.handbook },
-    { href: a(c.ids.challenge), label: c.nav.challenge },
+    { href: a(c.ids.offer), label: c.nav.programs },
+    { href: c.routes.blog, label: c.nav.blog },
     { href: a(c.ids.about), label: c.nav.about },
   ];
 
@@ -49,9 +49,6 @@ export default function Header({ c, page }: { c: Content; page: Page }) {
                 <a href={it.href}>{it.label}</a>
               </li>
             ))}
-            <li className="nav-cta-item">
-              <a className="nav-cta" href={a(c.ids.form)}>{c.nav.cta}</a>
-            </li>
             <li className="lang-switch">
               {c.lang === "nl" ? (
                 <>
