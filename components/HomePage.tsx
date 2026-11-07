@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import ChallengeLink from "./ChallengeLink";
 import HandbookForm from "./HandbookForm";
 import { Eyebrow, PriceLine, CoverPlaceholder } from "./Bits";
-import { Sparkle, Download, Lock } from "./Icons";
+import { Download, Lock } from "./Icons";
 
 export default function HomePage({ c }: { c: Content }) {
   const { ids } = c;
@@ -28,15 +28,15 @@ export default function HomePage({ c }: { c: Content }) {
                 {c.hero.bullets.map((b) => <li key={b}>{b}</li>)}
               </ul>
               <div className="btn-row">
-                <ChallengeLink lang={c.lang} className="btn btn-primary btn-icon" message={c.ui.noSales}>
-                  <Sparkle /> {c.hero.primary}
-                </ChallengeLink>
+                <a className="btn btn-primary btn-icon" href={`#${ids.form}`}><Download /> {c.hero.primary}</a>
               </div>
+              <ChallengeLink lang={c.lang} className="text-link" message={c.ui.noSales}>{c.hero.challengeLink}</ChallengeLink>
             </div>
 
             <aside className="offer-card reveal" aria-labelledby="offer-titel">
               <p className="eyebrow eyebrow-plain">{c.hero.card.eyebrow}</p>
               <h2 id="offer-titel">{c.hero.card.title}</h2>
+              <p className="offer-sub">{c.hero.card.subtitle}</p>
               <div className="star-divider" aria-hidden="true"><span>✦</span></div>
               <div className="book-wrap" aria-hidden="true">
                 <div className="book">
@@ -48,17 +48,6 @@ export default function HomePage({ c }: { c: Content }) {
               <a className="btn btn-primary btn-icon" href={`#${ids.form}`}><Download /> {c.hero.card.button}</a>
               <p className="offer-note"><Lock /> {c.hero.card.note}</p>
             </aside>
-          </div>
-        </section>
-
-        {/* PAARSE BALK */}
-        <section className="band-purple" aria-label={c.band.line1}>
-          {["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"].map((s) => (
-            <span key={s} className={`star ${s}`} aria-hidden="true">✦</span>
-          ))}
-          <div className="wrap center reveal">
-            <p className="band-text">{c.band.line1}<br />{c.band.line2}</p>
-            <div className="star-divider" aria-hidden="true"><span>✦</span></div>
           </div>
         </section>
 
@@ -82,6 +71,17 @@ export default function HomePage({ c }: { c: Content }) {
               {c.shift.paragraphs.map((p) => <p key={p}>{p}</p>)}
               <p className="callout">{c.shift.callout}</p>
             </div>
+          </div>
+        </section>
+
+        {/* OUDROZE BALK — samenvatting van de denkshift */}
+        <section className="band-purple" aria-label={c.band.line1}>
+          {["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"].map((s) => (
+            <span key={s} className={`star ${s}`} aria-hidden="true">✦</span>
+          ))}
+          <div className="wrap center reveal">
+            <p className="band-text">{c.band.line1}<br />{c.band.line2}</p>
+            <div className="star-divider" aria-hidden="true"><span>✦</span></div>
           </div>
         </section>
 

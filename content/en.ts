@@ -34,7 +34,7 @@ export const en: Content = {
   },
 
   nav: {
-    cta: "Free product",
+    cta: "Free handbook",
     start: "Start here",
     handbook: "The handbook",
     masterclass: "Masterclass",
@@ -43,7 +43,7 @@ export const en: Content = {
   },
 
   hero: {
-    eyebrow: "Gentle yet decisive change",
+    eyebrow: "ROOTS | Start here",
     titleBefore: "Lasting change doesn't have to be ",
     titleHighlight: "a struggle",
     titleAfter: " with yourself.",
@@ -55,11 +55,13 @@ export const en: Content = {
       "Gentle, natural and at your own pace",
       "Results that last, without draining all your strength",
     ],
-    primary: "Yes, I want this change",
+    primary: "Start here — download the free handbook",
+    challengeLink: "I want to go straight to the Breakfree Challenge",
     card: {
-      eyebrow: "Free insight",
-      title: "Why patterns keep coming back",
-      button: "Yes, send me this free insight",
+      eyebrow: "Free handbook",
+      title: "The Pattern Reset Handbook",
+      subtitle: "From insight to lasting change",
+      button: "Send me the free handbook",
       note: "Your details are safe. No spam, ever.",
     },
   },

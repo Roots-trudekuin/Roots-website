@@ -550,3 +550,5 @@ h3 { color: var(--jet); }
 .band-purple .star-divider { color: var(--white); }
 .band-purple .star-divider::before, .band-purple .star-divider::after { background: var(--white); }
 .hl { background: none; padding: 0; }
+.offer-sub { font-style: italic; margin: 6px 0 0; font-size: .95em; }
+.hero .text-link { margin-top: 18px; }

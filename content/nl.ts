@@ -33,7 +33,7 @@ export const nl = {
   },
 
   nav: {
-    cta: "Gratis product",
+    cta: "Gratis handboek",
     start: "Start hier",
     handbook: "Het handboek",
     masterclass: "Masterclass",
@@ -42,7 +42,7 @@ export const nl = {
   },
 
   hero: {
-    eyebrow: "Zacht dominant veranderen",
+    eyebrow: "ROOTS | Start hier",
     titleBefore: "Blijvende verandering hoeft ",
     titleHighlight: "geen strijd",
     titleAfter: " met jezelf te zijn.",
@@ -54,12 +54,13 @@ export const nl = {
       "Zacht, natuurlijk en in jouw tempo",
       "Resultaat dat blijft, zonder dat het al je kracht kost",
     ],
-    /** gaat naar de Breakfree Challenge (centrale URL) */
-    primary: "Ja, ik wil deze verandering",
+    primary: "Start hier — download het gratis handboek",
+    challengeLink: "Ik wil direct de Breakfree Challenge ontdekken",
     card: {
-      eyebrow: "Gratis inzicht",
-      title: "Waarom patronen steeds terugkomen",
-      button: "Ja, stuur mij dit gratis inzicht",
+      eyebrow: "Gratis handboek",
+      title: "Handboek Patroon-Reset",
+      subtitle: "Van inzicht naar blijvende verandering",
+      button: "Stuur mij het gratis handboek",
       note: "Je gegevens zijn veilig. Geen spam, ooit.",
     },
   },
