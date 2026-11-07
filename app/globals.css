@@ -549,3 +549,4 @@ h3 { color: var(--jet); }
 .band-purple .star { color: var(--white); opacity: .6; }
 .band-purple .star-divider { color: var(--white); }
 .band-purple .star-divider::before, .band-purple .star-divider::after { background: var(--white); }
+.hl { background: none; padding: 0; }
