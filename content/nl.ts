@@ -55,7 +55,6 @@ export const nl = {
       "Resultaat dat blijft, zonder dat het al je kracht kost",
     ],
     primary: "Start hier — download het gratis handboek",
-    challengeLink: "Ik wil direct de Breakfree Challenge ontdekken",
     card: {
       eyebrow: "Gratis handboek",
       title: "Handboek Patroon-Reset",

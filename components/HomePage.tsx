@@ -30,7 +30,6 @@ export default function HomePage({ c }: { c: Content }) {
               <div className="btn-row">
                 <a className="btn btn-primary btn-icon" href={`#${ids.form}`}><Download /> {c.hero.primary}</a>
               </div>
-              <ChallengeLink lang={c.lang} className="text-link" message={c.ui.noSales}>{c.hero.challengeLink}</ChallengeLink>
             </div>
 
             <aside className="offer-card reveal" aria-labelledby="offer-titel">

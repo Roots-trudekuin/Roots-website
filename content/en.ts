@@ -56,7 +56,6 @@ export const en: Content = {
       "Results that last, without draining all your strength",
     ],
     primary: "Start here — download the free handbook",
-    challengeLink: "I want to go straight to the Breakfree Challenge",
     card: {
       eyebrow: "Free handbook",
       title: "The Pattern Reset Handbook",
