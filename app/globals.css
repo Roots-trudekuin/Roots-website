@@ -518,3 +518,34 @@ h3 { color: var(--ink); }
 .hero h1 { max-width: 16ch; }
 .hero h1 { font-size: clamp(42px, 4.6vw, 66px); max-width: 17ch; }
 .logo .logo-img { height: 74px; }
+
+/* =====================================================================
+   KLEUREN TERUG NAAR HUISSTIJL (Seashell, Camel, Jet, Oudroze, Wit)
+   Vormen en indeling van het ontwerp blijven; geen paars.
+   ===================================================================== */
+:root { --ink: var(--camel); --text: var(--jet); --card: var(--white); }
+body, .bg-seashell, .site-header { background: var(--seashell); }
+.site-header { background: rgba(250,241,232,.95); }
+body { color: var(--jet); }
+h1, h2 { color: var(--camel); }
+h3 { color: var(--jet); }
+.nav-menu a, .text-link { color: var(--jet); }
+.nav-menu .nav-cta { color: var(--jet); border-color: var(--camel); }
+.nav-menu .nav-cta:hover { background: var(--camel); color: var(--white); }
+@media (max-width: 960px) { .nav-menu { background: var(--seashell); } }
+
+.btn-primary { background: var(--camel); color: var(--white); box-shadow: 0 14px 28px -18px rgba(120, 90, 40, .55); }
+.btn-primary:hover { background: var(--camel-dark); }
+.btn-secondary { color: var(--jet); border-color: var(--camel); }
+.btn-secondary:hover { background: var(--camel); color: var(--white); }
+
+.offer-card { background: var(--white); box-shadow: 0 30px 60px -44px rgba(51,51,51,.35); }
+.form, .cover-frame { background: var(--seashell); }
+.book-shadow { background: radial-gradient(ellipse at center, rgba(51,51,51,.25), transparent 70%); }
+
+/* Balk onder de hero: oudroze */
+.band-purple { background: var(--oudroze); border-top: 2px solid var(--camel); }
+.band-text { color: var(--white); text-shadow: 0 1px 2px rgba(51,51,51,.18); }
+.band-purple .star { color: var(--white); opacity: .6; }
+.band-purple .star-divider { color: var(--white); }
+.band-purple .star-divider::before, .band-purple .star-divider::after { background: var(--white); }
