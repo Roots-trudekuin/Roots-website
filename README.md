@@ -1,48 +1,39 @@
 # TrudeThecla | ROOTS — website
 
-Website van TrudeThecla (trudethecla.nl), met ROOTS als methode: tweetalig (NL/EN), gebouwd met Next.js en klaar om op Vercel te zetten.
+Statische website (HTML en CSS) voor trudethecla.nl, met ROOTS als methode en de Trigger Breakfree Challenge als hoofdproduct. Vercel serveert de map `public/`; er is geen build-stap op Vercel.
+
+De migratie naar React en Tailwind volgt later (migratieplan met Nigel).
 
 ## Pagina's
 
-| NL | EN |
+| Adres | Pagina |
 |---|---|
-| `/` landingspagina Start hier | `/en` |
-| `/masterclass` | `/en/masterclass` |
-| `/bedankt` (na aanmelding handboek) | `/en/thank-you` |
+| `/` | Homepage (Start hier) met de opt-in voor het gratis Handboek Patroon-Reset (`/#handboek`) |
+| `/challenge` | Salespagina Trigger Breakfree Challenge |
+| `/inzicht` | Inzicht: Artikelen en Video's |
+| `/over-trude` | Over Trude |
+| `/contact` | Contact |
+| `/bedankt` | Na aanmelding handboek (niet in Google) |
+| `/welkom` | Na aankoop Challenge (niet in Google) |
+| `/masterclass-zet-je-patroon-uit` | Masterclass, alleen via de link in het handboek (verschijnt zodra de video-URL is ingevuld) |
+| `/en` | Engelse homepage |
 
-## Waar staat wat
+## Aanpassen
 
-- **`config/site.ts`**: alle links en koppelingen, per taal:
-  - `challengeSalesUrl`: één URL voor alle Breakfree Challenge-knoppen
-  - `challengePrijsRegel`: prijsregel (leeg = niet tonen)
-  - `masterclassVideoUrl`: embed-URL van de masterclassvideo
-  - `emailMarketing`: koppeling van het handboekformulier (action-URL, veldnamen, verborgen velden)
-- **`content/nl.ts`** en **`content/en.ts`**: alle teksten.
-- **`app/globals.css`**: vormgeving (Seashell #FAF1E8, Camel #BD9D60, Jet #333333, Oudroze #BEA8A7, Montserrat).
-- **`public/img/`**: omslag handboek en portret.
-- **`components/Logo.tsx`**: logo-placeholder. Vervangen door het echte logo.
+- **`bron/config.json`**: betaallink, prijs, startdatum, formulierkoppelingen, Instagram, community, privacy- en voorwaardenlinks, masterclassvideo. Een leeg veld betekent dat het onderdeel niet op de site staat.
+- **`bron/gen_*.py`**: de teksten en opbouw van de pagina's.
+- **`bron/assets/`**: foto's, logo-icoon en lettertypen (Montserrat en Cinzel, zelf gehost).
 
-Lege waarden zijn placeholders: de site meldt dan dat de koppeling ontbreekt en verstuurt niets.
+Daarna opnieuw bouwen:
 
-## Formulier
-
-Het handboekformulier doet een gewone formulierpost naar de e-maildienst (MailerLite, ActiveCampaign, Brevo, Kit, …). Instellen in die dienst:
-1. automatische e-mail met het handboek;
-2. na aanmelden doorsturen naar `https://trudethecla.nl/bedankt` (EN: `https://trudethecla.nl/en/thank-you`).
-
-Liever via de API van de dienst? Voeg een route handler toe (`app/api/subscribe/route.ts`) en laat `HandbookForm.tsx` daarheen posten.
-
-## Lokaal draaien
-
-```bash
-npm install
-npm run dev     # http://localhost:3000
+```
+python3 bron/build.py
 ```
 
-## Online zetten (Vercel)
+Dat vult `public/` opnieuw. Commit `public/` mee.
 
-1. Zet deze map in een GitHub-repository.
-2. Ga naar vercel.com → **Add New → Project** → kies de repository → **Deploy**. Instellingen kunnen standaard blijven.
-3. Koppel het domein via **Settings → Domains**.
+## Nog niet gekoppeld
 
-Elke push naar GitHub zet daarna automatisch een nieuwe versie online.
+- Handboekformulier: zolang `handboek_formulier_action` leeg is, gaat het formulier alleen naar `/bedankt` en wordt er niets verstuurd.
+- Koopknoppen Challenge: verschijnen pas als `challenge_betaallink` (Plug&Pay) is ingevuld.
+- Contactformulier: verschijnt pas als `contact_formulier_action` of `contact_email` is ingevuld.
