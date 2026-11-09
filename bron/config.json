@@ -1,0 +1,14 @@
+{
+  "_uitleg": "Vul een waarde in zodra die bekend is en draai daarna: python3 bron/build.py. Lege waarden = het onderdeel wordt niet getoond.",
+  "challenge_betaallink": "",
+  "challenge_prijs": "",
+  "challenge_startdatum": "",
+  "handboek_formulier_action": "",
+  "contact_formulier_action": "",
+  "contact_email": "",
+  "instagram_url": "",
+  "skool_url": "",
+  "masterclass_video_url": "",
+  "privacy_url": "",
+  "voorwaarden_url": ""
+}
