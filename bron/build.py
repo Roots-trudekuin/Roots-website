@@ -76,7 +76,10 @@ def cut(html, start, end, keep_end=False):
 
 
 def fix(html, lang="nl"):
-    html = re.sub(r'<a class="btn" href="EN-Checkout"[^>]*>.*?</a>', "", html, flags=re.S)
+    if cfg.get("challenge_betaallink_en"):
+        html = html.replace('href="EN-Checkout"', f'href="{cfg["challenge_betaallink_en"]}"')
+    else:
+        html = re.sub(r'<a class="btn" href="EN-Checkout"[^>]*>.*?</a>', "", html, flags=re.S)
     # knoppen naar de betaalpagina
     if not CHECKOUT:
         html = cut(html, '<div class="c1">\n<p class="kick">Zo meld je je aan</p>', 'Ja, ik doe mee</a>\n</div>\n')

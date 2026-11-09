@@ -35,5 +35,5 @@ Dat vult `public/` opnieuw. Commit `public/` mee.
 ## Nog niet gekoppeld
 
 - Handboekformulier: zolang `handboek_formulier_action` leeg is, gaat het formulier alleen naar `/bedankt` en wordt er niets verstuurd.
-- Koopknoppen Challenge: verschijnen pas als `challenge_betaallink` (Plug&Pay) is ingevuld.
+- Koopknoppen Challenge: verschijnen pas als `challenge_betaallink` (Plug&Pay) is ingevuld; voor de Engelse pagina's `challenge_betaallink_en`.
 - Contactformulier: verschijnt pas als `contact_formulier_action` of `contact_email` is ingevuld.
