@@ -1,0 +1,307 @@
+from gen_common import *
+from gen_en import header_en, header_en_min, footer_en, optin_en, PORTRAIT_EN
+from gen_sales import pair, flow, faq, FORK
+
+
+def buycard_en():
+    mock = f'''<div class="mock"><div class="dotsC" style="position:absolute;inset:0"></div><div class="phone"><img src="{PORTRAIT}" alt="Trude in the day 1 video"><div class="t">Day 1 of 7</div><div class="n">Trigger Breakfree Challenge</div><div class="d"><i class="f"></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>'''
+    return f'''<div class="buy">{mock}
+<p class="cap" style="margin-top:24px">Trigger Breakfree Challenge</p>
+<ul class="list" style="margin-bottom:18px">
+<li style="font-size:16px">{CHECK}<span>7 days, a short video from me every day</span></li>
+<li style="font-size:16px">{CHECK}<span>1 pattern of your own as your material</span></li>
+<li style="font-size:16px">{CHECK}<span>Together in the community, and I&#8217;m there with you</span></li>
+</ul>
+{tbc("Price and start EN", "")}
+<a class="btn" href="EN-Checkout" style="display:block;margin-top:20px">Yes, I&#8217;m in</a>
+</div>'''
+
+
+def hero_en(kick, h1, leads, right, extra=""):
+    ps = ''.join(f'<p class="lead">{l}</p>' for l in leads)
+    return f'''<section style="padding:90px 0 100px;position:relative;overflow:hidden">
+<div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div>
+<div class="w"><div class="row" style="gap:72px">
+<div class="c1" style="flex:1.25 1 0"><p class="kick">{kick}</p><h1 class="h1">{h1}</h1>{ps}{extra}</div>
+<div class="c1" style="flex:1 1 0">{right}</div>
+</div></div></section>'''
+
+
+EN_CHALLENGE = header_en("chal") + f'''
+<section style="padding:90px 0 110px;position:relative;overflow:hidden"><div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div><div class="w"><div class="row top" style="gap:72px">
+<div class="c1" style="flex:1.25 1 0">
+<p class="kick">Trigger Breakfree Challenge &#183; 7 days</p>
+<h1 class="h1">Imagine your old pattern <span class="cam">no longer deciding automatically</span> how you respond.</h1>
+<p class="lead" style="margin-bottom:56px">That in that meeting, in that conversation, at that birthday party, you simply choose for yourself. Seven days, one pattern of your own, with me alongside you.</p>
+<p class="kick">What is it?</p>
+<h2 class="h2">What is the Trigger Breakfree Challenge?</h2>
+<p class="p">A week in which you don&#8217;t try to understand your pattern even better. You work with it yourself.</p>
+<p class="p">You choose one pattern you really want to be free of. Saying yes when you mean no. Snapping. Shutting down. Working harder. Explaining yourself. And in seven days you discover what it protects you from, what sets it off for you, and what it&#8217;s like when it no longer starts automatically.</p>
+<p class="p">A short video from me every day. One thing to do every day, in your own week, in your own life. And a community of people who recognise this, where you share what you notice. I&#8217;m there with you.</p>
+</div>
+<div class="c1" style="flex:1 1 0;position:sticky;top:24px">{buycard_en()}</div>
+</div></div></section>
+
+<section class="sec white"><div class="wn">
+<p class="kick">You know this</p>
+<h2 class="h2">You knew. You had promised yourself. And yet.</h2>
+<p class="p">A remark. A particular tone of voice. Someone pulling away. A silence that lasts a moment too long. And before you know it, the very thing you thought you had moved beyond happens again. You adapt. You withdraw. You start pleasing others. You become sharp. You work harder. Or you begin to explain yourself.</p>
+<p class="p">Only afterwards do you think: damn. I&#8217;m doing it again.</p>
+<p class="p">Then the search starts all over. What haven&#8217;t I seen yet? Do I need to go further back? Have I not felt it thoroughly enough?</p>
+<p class="lead cam" style="font-weight:500;margin-top:30px">You can explain exactly where your pattern comes from. But that does not stop it from happening again.</p>
+</div></section>
+
+<section class="sec"><div class="w">
+<div class="grid2" style="gap:48px;margin-bottom:10px"><div><p class="kick">Now</p><h2 class="h2" style="font-size:32px">What happens now</h2></div><div><p class="kick">Imagine</p><h2 class="h2" style="font-size:32px">The same moment, a different experience</h2></div></div>
+{pair("There&#8217;s a silence in the meeting. &#8216;I&#8217;ll do it.&#8217; It&#8217;s out before you&#8217;ve decided.", "The same silence. Your body stays calm. You choose for yourself whether to take something on.")}
+{pair("Your partner says something in that one tone of voice. You snap, or you withdraw.", "You hear the tone. You stay with yourself, and say what you actually meant.")}
+{pair("A colleague gives you feedback. You start explaining, defending, justifying.", "You hear what is being said, without the old reaction taking over the conversation.")}
+{pair("Afterwards you know exactly what you would rather have done. But in the moment, that choice didn&#8217;t seem to be there.", "The choice is simply there. Nothing spectacular. Often perfectly ordinary.")}
+{pair("After a setback, the self-blame begins. &#8216;See? It&#8217;s me.&#8217;", "A setback is information. &#8216;Hey, interesting. My system is still protecting me from something.&#8217;")}
+<div style="border-top:1px solid #E3D3BF"></div>
+</div></section>
+
+<section class="sec white"><div class="w">
+<div class="wn" style="padding:0;text-align:center;max-width:820px;margin:0 auto">
+<p class="kick">Why insight is not enough</p>
+<h2 class="h2">Knowing where it comes from doesn&#8217;t change what sets it off <span class="cam">now.</span></h2>
+<p class="p">Your story helps you understand what has happened in your life. Your neurobiology determines how old information still plays an automatic role today. Your survival system uses a few fragments of your story to protect you. Faster than you can think. That&#8217;s why all your understanding doesn&#8217;t help you in the moment.</p>
+</div>
+<div class="grid2" style="margin-top:56px;gap:56px;max-width:980px;margin-left:auto;margin-right:auto">
+<div><p class="cap" style="text-align:center;color:#8E7372">The old view</p>
+{flow(["Something small happens: a silence, a tone, a look", "The old reaction takes over", "Afterwards: &#8216;Where does this come from?&#8217;", "Another layer, further back, another explanation", "Next time: exactly the same &#8635;"], False)}</div>
+<div><p class="cap" style="text-align:center">The new view</p>
+{flow(["Something small happens: a silence, a tone, a look", "You ask: &#8216;What set it off this time?&#8217;", "You see how your neurobiology uses a few fragments of your story to protect you", "That is exactly where you work, with one pattern", "The same situation. Your choice is still there."], True)}</div>
+</div>
+<div class="cardS" style="max-width:980px;margin:60px auto 0;display:flex;gap:40px;align-items:center;flex-wrap:wrap">
+<div style="flex:1 1 420px"><h3 class="h3" style="font-size:24px;font-weight:400">Your pattern is not the problem. The automatic response is.</h3><p class="p" style="margin:0">Your pattern is one of your qualities in automatic form. Caring, perceptiveness, sensitivity, taking responsibility. You don&#8217;t have to unlearn anything about yourself. You get something back: the freedom to choose.</p></div>
+<a class="btn" href="EN-Checkout">Yes, I&#8217;m in</a>
+</div>
+</div></section>
+
+<section class="sec"><div class="w"><div class="row top" style="gap:80px">
+<div style="flex:0 0 420px">
+<div class="photo"><span class="tape"></span><img src="{PORTRAIT}" alt="Portrait of Trude Kuin"></div>
+</div>
+<div class="c1">
+<p class="kick">How ROOTS began</p>
+<h2 class="h2">One question I could never let go of.</h2>
+<p class="p">In my early years in this work, I saw something that kept bothering me. People came in feeling awful and seeing no way forward. They left happy. And two weeks later, at the next appointment, all their old patterns were back.</p>
+<p class="quote" style="margin:30px 0">&#8220;How do I help people change in a way that gives them lasting influence over it themselves?&#8221;</p>
+<p class="p">Since 1988 I have guided, trained and advised people through personal change. As a consultant, coach, hypnotherapist and Havening practitioner. Thousands of people. And I kept asking the same three questions. How does this work? What can I influence? And how can I use that influence to achieve what I want?</p>
+<p class="p">I asked those questions about my own life too. My own patterns became my first material for investigation. Whatever I discovered, I first applied to myself.</p>
+{tbc("Alleen met jouw akkoord", "In 2014 I was at my lowest point. Ill, everything lost, no doctor who knew what to do. That&#8217;s when I decided: if no one can help me heal, I&#8217;ll do it myself. That&#8217;s where what would later be called ROOTS began.")}
+<p class="p">The answer wasn&#8217;t in yet another layer of the story. It was in how neurobiology uses that story. Once I saw how it fits together, what had seemed complicated became manageable. And therefore something you can influence. That is how ROOTS grew.</p>
+</div>
+</div></div></section>
+
+<section class="sec white"><div class="wn">
+<p class="kick">The next step</p>
+<h2 class="h2">Understanding is not the same as experiencing.</h2>
+<p class="p">In the handbook and the masterclass I show you that it works this way. There is one thing I don&#8217;t show there: how you find the piece that sets off the alarm for you, and how that connection is broken.</p>
+<p class="p">Not because it&#8217;s a secret. Because it only works when you do it. With one pattern of your own. And with someone alongside you who sees what you can&#8217;t see in that moment.</p>
+<p class="lead cam" style="font-weight:500">That&#8217;s why there is the Trigger Breakfree Challenge.</p>
+</div></section>
+
+<section class="sec"><div class="w">
+<p class="kick">From practice</p>
+<h2 class="h2" style="max-width:760px">What that looks like in real life</h2>
+<div class="row top" style="gap:56px;margin-top:20px">
+<div class="c1 card">
+<p class="cap">Sanne, 46, HR manager</p>
+<p class="p">Sanne knows her pattern inside out. She takes everything on. Years of therapy and piles of books have shown her where it came from. After her burnout, she genuinely changed things: fewer hours, boundaries, saying no. For months it goes well.</p>
+<p class="p">Then, during a meeting, there is a silence after someone asks who will take on a project. &#8220;I&#8217;ll do it.&#8221; She hears herself say it before she has decided.</p>
+<p class="p">A few weeks later, there is another silence. She notices it, but her body stays calm. She thinks: &#8220;I don&#8217;t have to do anything.&#8221; A colleague says, &#8220;I&#8217;ll do it.&#8221;</p>
+<p class="p" style="margin:0"><span class="cam" style="font-weight:600">She is still someone who takes initiative. Now she does it when she chooses.</span></p>
+<p class="ps" style="margin-top:18px;font-size:13px;color:#7A6A5A">Example from practice, from the Pattern Reset Handbook.</p>
+</div>
+<div class="c1">
+<h3 class="h3" style="font-size:24px;font-weight:400">What it feels like</h3>
+<p class="p">Nothing spectacular. Often perfectly ordinary. You find yourself in a situation that used to sweep you away, and notice that your ability to choose is still there. You feel what you feel, think what you think, and the old pattern does not take over.</p>
+<p class="quote" style="margin:30px 0">That is where freedom begins: not because you have become better at controlling yourself, but because your survival program is no longer in the driver&#8217;s seat.</p>
+</div>
+</div>
+</div></section>
+
+<section class="sec white"><div class="w"><div class="row top" style="gap:72px">
+<div class="c1">
+<p class="kick">The offer</p>
+<h2 class="h2">What you get in the Trigger Breakfree Challenge</h2>
+<ul class="list">
+<li>{CHECK}<span><b style="font-weight:600">Seven short videos from me.</b> One a day, so you know what you&#8217;re doing and why.</span></li>
+<li>{CHECK}<span><b style="font-weight:600">One thing to do every day.</b> In your own week, in your own life.</span></li>
+<li>{CHECK}<span><b style="font-weight:600">One pattern of your own.</b> No theory about patterns in general. Your pattern is the material.</span></li>
+<li>{CHECK}<span><b style="font-weight:600">The community.</b> With others who recognise this. You share what you notice, and I&#8217;m there with you.</span></li>
+</ul>
+<h3 class="h3" style="margin-top:44px;font-size:24px;font-weight:400">What the week looks like</h3>
+<div class="grid2" style="gap:16px;margin-top:20px">
+<div class="cardS" style="padding:26px"><p class="cap" style="margin-bottom:6px">Day 1&#8211;2 &#183; Mapping</p><p class="ps">Your pattern, the vicious cycle, and what it protects you from.</p></div>
+<div class="cardS" style="padding:26px"><p class="cap" style="margin-bottom:6px">Day 3&#8211;4 &#183; Tracing</p><p class="ps">What sets it off for you.</p></div>
+<div class="cardS" style="padding:26px"><p class="cap" style="margin-bottom:6px">Day 5&#8211;6 &#183; Breaking</p><p class="ps">The connection, so the alarm no longer goes off.</p></div>
+<div class="cardS" style="padding:26px"><p class="cap" style="margin-bottom:6px">Day 7 &#183; Strengthening</p><p class="ps">What you do want to make automatic.</p></div>
+</div>
+<div class="grid2" style="margin-top:50px;gap:36px">
+<div><h3 class="h3">For you if</h3><ul class="list"><li style="font-size:16px">{CHECK}<span>you understood your pattern long ago, and it still takes over</span></li><li style="font-size:16px">{CHECK}<span>you really want to be free of one pattern</span></li><li style="font-size:16px">{CHECK}<span>you want to experience it yourself, not just understand it</span></li></ul></div>
+<div><h3 class="h3">Not for you if</h3><ul class="list"><li style="font-size:16px">{DASH}<span>you&#8217;re looking for even more insight. You have plenty of that.</span></li></ul></div>
+</div>
+</div>
+<div style="flex:0 0 400px">{buycard_en()}</div>
+</div></div></section>
+
+<section class="sec"><div class="wn">
+<p class="kick">&#8220;But&#8230;&#8221;</p>
+<h2 class="h2">Perhaps you&#8217;re thinking&#8230;</h2>
+{faq("&#8220;I&#8217;ve already done so much.&#8221;", "Exactly. Everything you have done worked with your story, your understanding or your behaviour. This works at the level underneath.")}
+{faq("&#8220;Do I have to go back to my childhood again?&#8221;", "No. We&#8217;re not looking for a new explanation. We&#8217;re looking for the piece your survival system uses. That&#8217;s something different from retelling your history.")}
+{faq("&#8220;I&#8217;m too sensitive, too complex.&#8221;", "A sensitive system reacts faster, yes. It also updates faster. Feeling a lot is no disadvantage here.")}
+{faq("&#8220;Is this another quick promise?&#8221;", "Honestly: it&#8217;s one week, with one pattern. You don&#8217;t tackle all your patterns at once. With one pattern, you experience what changes when you work at this level.")}
+<div style="border-top:1px solid #E3D3BF"></div>
+</div></section>
+
+<section class="sec white"><div class="w"><div class="row top" style="gap:64px">
+<div class="c1" style="max-width:820px">
+<p class="kick">No surprises</p>
+<h2 class="h2">You know exactly what you&#8217;re getting.</h2>
+<p class="p">Seven days with one pattern of your own. A short video and one thing to do every day. The community, where I&#8217;m there with you. A question beforehand? Send me a message. I answer myself.</p>
+<a class="btn2" href="EN-Contact.dc.html">Ask your question &#8594;</a>
+</div>
+</div></div></section>
+
+<section class="sec"><div class="wn" style="text-align:center">
+<h2 class="h2">If you&#8217;ve read this far, ask yourself this&#8230;</h2>
+<div style="display:flex;justify-content:center;margin:20px 0 30px">{FORK}</div>
+</div>
+<div class="wn">
+<p class="lead">Imagine there&#8217;s a fork in the road.</p>
+<p class="p">To the left, you carry on as you always have. At the next setback, you search your story again. Another layer, further back, another explanation. That isn&#8217;t wrong. It has given you a lot. It just doesn&#8217;t switch off your pattern.</p>
+<p class="p">To the right, next time you don&#8217;t look back, but at what sets it off now. With one pattern of your own. Seven days. With me alongside you.</p>
+<div class="card" style="margin:36px 0"><p class="p" style="margin:0"><span class="cam" style="font-weight:600">Imagine for a moment.</span> What if, soon, that pattern were simply gone? Not suppressed, not managed. You are in that conversation, that meeting, that family dinner. And nothing happens. What would you do with all that freedom?</p></div>
+<p class="lead">You don&#8217;t have to start over. Everything you have done counts. It was missing one layer. That layer is what we do in the challenge.</p>
+<p class="lead">And you will succeed!</p>
+<p class="lead cam" style="font-weight:500">Love, Trude</p>
+<div style="text-align:center;margin-top:40px"><a class="btn" href="EN-Checkout">Yes, I&#8217;m joining the Trigger Breakfree Challenge</a></div>
+</div></section>
+
+<section class="sec white"><div class="wn">
+<div class="cardS" style="border:1px solid #BD9D60">
+<p class="cap">PS &#8212; for those who scrolled straight down</p>
+<ul class="list">
+<li>{CHECK}<span>For anyone who understood their pattern long ago, and notices it still takes over</span></li>
+<li>{CHECK}<span>7 days, one pattern of your own, a short video and one thing to do every day</span></li>
+<li>{CHECK}<span>Together in the community, and I&#8217;m there with you</span></li>
+<li>{CHECK}<span>You discover what sets it off for you, and experience what it&#8217;s like when it no longer starts automatically</span></li>
+</ul>
+<a class="btn" href="EN-Checkout" style="display:block;margin-top:22px">Yes, I&#8217;m in</a>
+</div>
+</div></section>
+''' + footer_en()
+
+EN_INSIGHTS = header_en("ins") + hero_en(
+    "Insights", 'Why your pattern keeps coming back, <span class="cam">and how to look at it differently.</span>',
+    ["Articles and videos about setbacks, your story and your neurobiology. To read, to watch and to recognise."],
+    optin_en(),
+    '<div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px"><a class="btn2" href="#articles">Articles</a><a class="btn2" href="#videos">Videos</a></div>') + '''
+<section id="articles" class="sec white"><div class="w"><p class="kick">Articles</p><h2 class="h2">Read more</h2><p class="p">The first articles are coming soon.</p></div></section>
+<section id="videos" class="sec"><div class="w"><p class="kick">Videos</p><h2 class="h2">Watch and recognise</h2><p class="p">The first videos are coming soon.</p></div></section>
+<section class="rose" style="padding:90px 0"><div class="wn" style="text-align:center">
+<h2 class="h2">From reading and watching to doing</h2><p class="lead">In the Trigger Breakfree Challenge you work with one pattern of your own for seven days.</p>
+<a class="btn" href="EN-Challenge.dc.html" style="background:#FFFFFF;color:#333333">View the Trigger Breakfree Challenge</a></div></section>
+''' + footer_en()
+
+EN_ABOUT = header_en("about") + hero_en(
+    "The woman behind ROOTS", 'Hi, I&#8217;m <span class="cam">Trude.</span>',
+    ["For more than thirty-five years, one question has stayed with me: how do I help people change in a way that gives them lasting influence over it themselves?", "That question led me to ROOTS."],
+    optin_en()) + f'''
+<section class="sec white"><div class="w"><div class="row top" style="gap:80px">
+<div style="flex:0 0 380px" class="photo"><span class="tape"></span><img src="{PORTRAIT}" alt="Portrait of Trude Kuin"></div>
+<div class="c1">
+<p class="kick">Where it began</p>
+<h2 class="h2">On the street, I made up the games.</h2>
+<p class="p">As a child, I was the one on our street with the ideas. The other children joined in and followed my suggestions. I made sure nobody was bullied. Connecting people and taking them along into something new: that was there from early on.</p>
+<p class="p">Later I studied health sciences. I became a trainer of job-search groups, an adviser and a recruiter, and guided people in choosing careers and studies. Then came coaching, hypnotherapy and Havening. Thousands of conversations, always getting closer to the core. What is going on inside people? What holds them back? And how do they set their potential in motion?</p>
+</div>
+</div></div></section>
+
+<section class="sec"><div class="wn">
+<p class="kick">The question I couldn&#8217;t let go of</p>
+<h2 class="h2">Leaving happy. And two weeks later, everything was back.</h2>
+<p class="p">In my work, I saw something I could never let go of. People came in feeling awful and seeing no way forward. They left happy. And two weeks later, at the next appointment, all their old patterns were back.</p>
+<p class="quote" style="margin:34px 0">&#8220;How do I help people change in a way that gives them lasting influence over it themselves?&#8221;</p>
+<p class="p">Not dependent on me. Not until the next appointment. But in a way they can do themselves, later on too.</p>
+</div></section>
+
+<section class="sec white"><div class="wn">
+<p class="kick">Myself first</p>
+<h2 class="h2">My own patterns were my first material for investigation.</h2>
+<p class="p">I always asked three questions. How does this work? What can I influence? And how can I use that influence to achieve what I want? I asked those questions about my own life too.</p>
+<p class="p">That meant my patterns were not just things I wanted to be free of. They became material for investigation. Whatever I discovered, I first applied to myself. That meant I knew exactly why I was doing something in my practice, what I was working on and what outcome I was aiming for.</p>
+<div style="margin:30px 0">{tbc("Alleen met jouw akkoord", "In 2014 I was at my lowest point. Ill from the stress after my business went bankrupt, everything lost, and no doctor or psychologist who knew what to do. That&#8217;s when I decided: I would rather lose everything than carry on like this. If no one can help me heal, I&#8217;ll do it myself. That&#8217;s where what would later be called ROOTS began.")}</div>
+<p class="p">That is how I freed myself from patterns that kept leading me into the same pitfalls. And created what mattered most to me: using my full potential for greater awareness, love and creativity.</p>
+</div></section>
+
+<section class="sec"><div class="wn">
+<p class="kick">How ROOTS grew</p>
+<h2 class="h2">From separate insights to a method.</h2>
+<p class="p">I kept exploring. My own experiences, and what science was discovering about change. My curiosity lies in connecting different perspectives. When I begin to see how things fit together, something happens that I deeply enjoy: what once seemed complicated becomes manageable. And therefore something you can influence.</p>
+<p class="p">That is how ROOTS grew. A method that doesn&#8217;t separate body and mind, and keeps your story and your neurobiology together. With which you switch off your pattern at the source, and then learn to adjust it yourself.</p>
+<p class="quote" style="margin-top:26px">The most intimate part of yourself, how you feel and how you think, should belong to you.</p>
+</div></section>
+
+<section class="sec white"><div class="wn" style="text-align:center">
+<p class="kick">Why ROOTS exists</p>
+<h2 class="h2">Becoming who you could have been. Before you look back in twenty years and think: if only I had known this sooner.</h2>
+<p class="p">No guru. No lifelong guidance. A guide who teaches you the craft, so you can adjust your patterns yourself. Later on too. Without me.</p>
+<div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:34px"><a class="btn" href="EN-Challenge.dc.html">View the Challenge</a><a class="btn2" href="EN-Home.dc.html#handbook" style="align-self:center">Or start with the free handbook &#8594;</a></div>
+</div></section>
+''' + footer_en()
+
+EN_CONTACT = header_en("contact") + f'''
+<section style="padding:90px 0 110px"><div class="w"><div class="row top" style="gap:80px">
+<div class="c1" style="flex:1.25 1 0">
+<p class="kick">Contact</p><h1 class="h1">A question? Send me a message.</h1>
+<p class="p">About the challenge, signing up, your access, or anything else. I read everything myself.</p>
+<form class="card" style="margin-top:20px">
+<div class="field"><label for="c1">Name</label><input id="c1" type="text"></div>
+<div class="field"><label for="c2">Email address</label><input id="c2" type="email"></div>
+<div class="field"><label for="c3">Your message</label><textarea id="c3" rows="6"></textarea></div>
+<label style="display:flex;gap:10px;font-size:14px;line-height:1.5;margin:4px 0 20px"><input type="checkbox"> I agree to the <a href="#">Privacy policy</a>.</label>
+<button class="btn" type="button">Send</button>
+</form>
+</div>
+<div class="c1" style="flex:1 1 0">{optin_en()}</div>
+</div></div></section>
+''' + footer_en()
+
+EN_THANKS = header_en("home") + f'''
+<section style="padding:90px 0 100px;position:relative;overflow:hidden"><div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div><div class="w"><div class="row top" style="gap:72px">
+<div class="c1" style="flex:1.25 1 0">
+<p class="kick">Done</p>
+<h1 class="h1">Your handbook is on its way <span class="cam">to your inbox.</span></h1>
+<p class="lead">Check your inbox in a few minutes. Nothing there? Have a look in your spam or promotions folder, and add my address to your contacts.</p>
+<div style="display:flex;flex-direction:column;gap:22px;margin-top:36px">
+<div class="step"><div class="num">1</div><div><h3 class="h3">Open the email</h3><p class="ps">With the link to your Pattern Reset Handbook.</p></div></div>
+<div class="step"><div class="num">2</div><div><h3 class="h3">Read it in one go</h3><p class="ps">Eleven pages. Make yourself a cup of tea.</p></div></div>
+</div>
+</div>
+<div class="c1" style="flex:1 1 0">{buycard_en()}</div>
+</div></div></section>
+
+<section class="sec white"><div class="w"><div class="row" style="gap:70px">
+<div class="c1">
+<p class="kick">Don&#8217;t want to wait?</p>
+<h2 class="h2">In the handbook you read that it works this way. In the challenge you do it.</h2>
+<p class="p">Understanding how your pattern switches on is valuable. But your pattern doesn&#8217;t change by reading a handbook. It changes when you work with it yourself. With one pattern of your own. Seven days. With me alongside you.</p>
+<a class="btn" href="EN-Challenge.dc.html">View the Trigger Breakfree Challenge</a>
+</div>
+</div></div></section>
+''' + footer_en()
+
+EN_WELCOME = header_en_min() + '''
+<section class="sec"><div class="wn" style="text-align:center">
+<p class="kick">You&#8217;re in</p>
+<h1 class="h1">Welcome to the Trigger Breakfree Challenge!</h1>
+<p class="lead">I&#8217;m so glad you&#8217;re here. Your confirmation email is on its way.</p>
+<p class="lead">Choose your pattern in advance. Think of a moment in the past few weeks when you thought: I&#8217;m doing it again.</p>
+<p class="lead cam" style="font-weight:500">Love, Trude</p>
+</div></section>
+'''

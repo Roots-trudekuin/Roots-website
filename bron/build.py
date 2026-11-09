@@ -44,6 +44,7 @@ import gen_home  # noqa: E402
 import gen_sales  # noqa: E402
 import gen_pages  # noqa: E402
 import gen_en  # noqa: E402
+import gen_en_pages  # noqa: E402
 
 from gen_common import header, footer, hero, optin_card, CHECK  # noqa: E402
 
@@ -53,6 +54,8 @@ CONTACT_ACTION = cfg["contact_formulier_action"]
 
 LINKS = [
     ("EN-Home.dc.html#handbook", "/en#handbook"), ("EN-Home.dc.html", "/en"),
+    ("EN-Challenge.dc.html", "/en/challenge"), ("EN-Insights.dc.html", "/en/insights"),
+    ("EN-About.dc.html", "/en/about-trude"), ("EN-Contact.dc.html", "/en/contact"),
     ("Main.dc.html#handboek", "/#handboek"), ("Main.dc.html", "/"),
     ("Optin.dc.html", "/#handboek"),
     ("Challenge.dc.html", "/challenge"),
@@ -73,6 +76,7 @@ def cut(html, start, end, keep_end=False):
 
 
 def fix(html, lang="nl"):
+    html = re.sub(r'<a class="btn" href="EN-Checkout"[^>]*>.*?</a>', "", html, flags=re.S)
     # knoppen naar de betaalpagina
     if not CHECKOUT:
         html = cut(html, '<div class="c1">\n<p class="kick">Zo meld je je aan</p>', 'Ja, ik doe mee</a>\n</div>\n')
@@ -89,7 +93,7 @@ def fix(html, lang="nl"):
         html = html.replace("[startdatum]", cfg["challenge_startdatum"])
 
     # handboekformulier
-    act = OPTIN_ACTION or "/bedankt"
+    act = OPTIN_ACTION or ("/en/thank-you" if lang == "en" else "/bedankt")
     method = "post" if OPTIN_ACTION else "get"
     for btn_txt, href in (("Stuur mij het handboek", 'href="Bedankt.dc.html"'), ("Send me the handbook", 'href="#"')):
         html = re.sub(r'<form>(\s*<div class="field">.*?)<a class="btn" ' + re.escape(href) + r' style="display:block;margin-top:8px">' + btn_txt + r'</a>\s*</form>',
@@ -251,21 +255,34 @@ if cfg["masterclass_video_url"]:
     page("masterclass-zet-je-patroon-uit.html", "Masterclass Zet je patroon uit bij de bron · TrudeThecla | ROOTS",
          "Gratis masterclass van Trude Kuin.", fix(mc), noindex=True)
 
-# Engels: alleen de homepage (de andere pagina's en de Challenge bestaan nog niet in het Engels)
-en = gen_en.EN
-en = en.replace("/_blob/9c771f73242de6925af332c753654877", "/img/omslag-handbook-en.jpg").replace("/_blob/b75005e3606297823a6d47a9e3562265", "/img/portret-rond-en.jpg")
-for item in ('<a href="#">Challenge</a>', '<a href="#">Insights</a>', '<a href="#">About Trude</a>', '<a href="#">Contact</a>'):
-    en = en.replace(item, "")
-en = en.replace('<a class="btn" href="#">Yes, send me the free handbook</a>', '<a class="btn" href="#handbook">Yes, send me the free handbook</a>')
-en = en.replace('<a class="btn" href="#">Yes, send me the handbook</a>', '<a class="btn" href="#handbook">Yes, send me the handbook</a>')
-en = en.replace('<a class="btn" href="#">Send me the handbook</a>', '<a class="btn" href="#handbook">Send me the handbook</a>')
-en = en.replace('<a class="btn2" href="#">Or go straight to the Trigger Breakfree Challenge &#8594;</a>', "")
-en = en.replace('<a class="btn" href="#">View the Challenge</a>', "")
-en = en.replace('<a class="btn2" href="#">Read my story &#8594;</a>', "")
-for li in ('<li><a href="#">Trigger Breakfree Challenge</a></li>', '<li><a href="#">Insights</a></li>', '<li><a href="#">About Trude</a></li>', '<li><a href="#">Send a message</a></li>'):
-    en = en.replace(li, "")
+# Engels
+EN_IMG = [("/_blob/9c771f73242de6925af332c753654877", "/img/omslag-handbook-en.jpg"), ("/_blob/b75005e3606297823a6d47a9e3562265", "/img/portret-rond-en.jpg")]
+def en_img(h):
+    for x, y in EN_IMG:
+        h = h.replace(x, y)
+    return h
+en = en_img(gen_en.EN)
 page("en/index.html", "TrudeThecla | ROOTS · Switch off your pattern at the source",
      "You know your pattern inside out, and yet it takes over. Discover with the free Pattern Reset Handbook why your pattern keeps coming back and where real change begins.",
      fix(en, "en"), lang="en")
+
+page("en/challenge.html", "Trigger Breakfree Challenge · TrudeThecla | ROOTS",
+     "Seven days, one pattern of your own, with Trude alongside you. Discover what sets your pattern off and experience what it is like when it no longer starts automatically.",
+     fix(en_img(gen_en_pages.EN_CHALLENGE), "en"), lang="en")
+page("en/insights.html", "Insights · TrudeThecla | ROOTS",
+     "Articles and videos by Trude Kuin about why old patterns keep coming back, and how to look at them differently.",
+     fix(en_img(gen_en_pages.EN_INSIGHTS), "en"), lang="en")
+page("en/about-trude.html", "About Trude · TrudeThecla | ROOTS",
+     "Since 1988 Trude Kuin has guided people through personal change. She developed ROOTS: the method that lets you switch off your pattern at the source.",
+     fix(en_img(gen_en_pages.EN_ABOUT), "en"), lang="en")
+en_contact = en_img(gen_en_pages.EN_CONTACT)
+if c_act:
+    en_contact = en_contact.replace('<form class="card" style="margin-top:20px">', f'<form class="card" style="margin-top:20px" action="{c_act}" method="post"' + (' enctype="text/plain"' if c_act.startswith("mailto:") else "") + ">")
+    en_contact = en_contact.replace('<input id="c1" type="text">', '<input id="c1" name="naam" type="text" required>').replace('<input id="c2" type="email">', '<input id="c2" name="email" type="email" required>').replace('<textarea id="c3" rows="6"></textarea>', '<textarea id="c3" name="bericht" rows="6" required></textarea>').replace('<button class="btn" type="button">Send</button>', '<button class="btn" type="submit">Send</button>')
+else:
+    en_contact = cut(en_contact, '<form class="card" style="margin-top:20px">', "</form>")
+page("en/contact.html", "Contact · TrudeThecla | ROOTS", "A question about the Trigger Breakfree Challenge, signing up or your access? Send Trude a message.", fix(en_contact, "en"), lang="en")
+page("en/thank-you.html", "Your handbook is on its way · TrudeThecla | ROOTS", "Your Pattern Reset Handbook is on its way to your inbox.", fix(en_img(gen_en_pages.EN_THANKS), "en"), lang="en", noindex=True)
+page("en/welcome.html", "Welcome · TrudeThecla | ROOTS", "Welcome to the Trigger Breakfree Challenge.", fix(en_img(gen_en_pages.EN_WELCOME), "en"), lang="en", noindex=True)
 
 print("klaar:", sorted(os.path.relpath(os.path.join(d, f), OUT) for d, _, fs in os.walk(OUT) for f in fs if f.endswith(".html")))
