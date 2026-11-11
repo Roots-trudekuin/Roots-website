@@ -129,7 +129,7 @@ def header(active="", minimal=False):
         return f'<header class="hdr"><div class="in">{logo}</div></header>'
     nav = ''.join([
         a("Main.dc.html#handboek", "Start hier", "home"),
-        a("Challenge.dc.html", "Challenge", "chal"),
+        a("Programmas.dc.html", "Programma&#8217;s", "prog"),
         a("Inzicht.dc.html", "Inzicht", "inz"),
         a("Over.dc.html", "Over Trude", "over"),
         a("Contact.dc.html", "Contact", "contact"),
@@ -142,7 +142,7 @@ def header(active="", minimal=False):
 def footer():
     return f'''<footer class="ftr"><div class="w"><div class="cols">
 <div style="flex:1 1 260px"><div class="wm">ROOTS</div><p class="ps" style="margin-top:10px;color:#FFFFFF">Zet je patroon uit bij de bron.</p><p class="ps" style="margin-top:22px;color:#FFFFFF">Een methode van TrudeThecla.</p></div>
-<div><p class="h">Website</p><ul><li><a href="Main.dc.html#handboek">Start hier</a></li><li><a href="Challenge.dc.html">Trigger Breakfree Challenge</a></li><li><a href="Inzicht.dc.html">Inzicht</a></li><li><a href="Main.dc.html#handboek">Gratis handboek</a></li><li><a href="Over.dc.html">Over Trude</a></li></ul></div>
+<div><p class="h">Website</p><ul><li><a href="Main.dc.html#handboek">Start hier</a></li><li><a href="Programmas.dc.html">Programma&#8217;s</a></li><li><a href="Challenge.dc.html">Trigger Breakfree Challenge</a></li><li><a href="Inzicht.dc.html">Inzicht</a></li><li><a href="Main.dc.html#handboek">Gratis handboek</a></li><li><a href="Over.dc.html">Over Trude</a></li></ul></div>
 <div><p class="h">Contact</p><ul><li><a href="Contact.dc.html">Stuur een bericht</a></li><li><a href="#">Instagram [@handle]</a></li><li><a href="#">Skool-community [naam en link]</a></li></ul></div>
 <div><p class="h">Info</p><ul><li><a href="#">Privacyverklaring</a></li><li><a href="#">Algemene voorwaarden</a></li><li><a href="#">Cookies</a></li></ul></div>
 </div><hr class="line" style="background:rgba(255,255,255,.4);margin:48px 0 20px"><p class="ps" style="color:#FFFFFF">&#169; TrudeThecla</p></div></footer>'''

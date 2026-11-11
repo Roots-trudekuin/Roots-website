@@ -3,7 +3,9 @@
   "challenge_betaallink": "",
   "challenge_betaallink_en": "",
   "challenge_prijs": "",
-  "challenge_startdatum": "",
+  "challenge_startdatum": "14 december",
+  "challenge_inschrijving_sluit": "2026-12-14",
+  "challenge_wachtlijst_url": "",
   "handboek_formulier_action": "",
   "contact_formulier_action": "",
   "contact_email": "",
@@ -11,5 +13,8 @@
   "skool_url": "",
   "masterclass_video_url": "",
   "privacy_url": "",
-  "voorwaarden_url": ""
+  "voorwaarden_url": "",
+  "individueel_betaallink": "",
+  "havening_betaallink": "",
+  "kennismaking_url": ""
 }

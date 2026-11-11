@@ -16,6 +16,10 @@ ROOT = os.path.dirname(HERE)
 OUT = os.path.join(ROOT, "public")
 ASSETS = os.path.join(HERE, "assets")
 cfg = json.load(open(os.path.join(HERE, "config.json"), encoding="utf-8"))
+PREVIEW = os.environ.get("PREVIEW") == "1"   # alleen voor previews: lege knoplinks tijdelijk zichtbaar maken
+if PREVIEW:
+    for k in ("challenge_betaallink", "individueel_betaallink", "havening_betaallink", "kennismaking_url"):
+        cfg[k] = cfg[k] or "#"
 
 sys.path.insert(0, HERE)
 os.chdir(tempfile.mkdtemp())          # de ontwerpbronnen schrijven hun canvasbestanden hierheen
@@ -34,7 +38,7 @@ def tbc(label, text):
         return f'<p class="p">{text}</p>'
     if label == "Prijs en start":
         parts = [p for p in (cfg["challenge_prijs"], cfg["challenge_startdatum"]) if p]
-        return f'<p class="p" style="font-weight:600;margin:0">{" &#183; ".join(parts)}</p>' if parts else ""
+        return f'<p class="p" style="font-weight:600;margin:0" data-chal-date>{" &#183; ".join(parts)}</p>' if parts else ""
     return ""
 
 
@@ -45,6 +49,7 @@ import gen_sales  # noqa: E402
 import gen_pages  # noqa: E402
 import gen_en  # noqa: E402
 import gen_en_pages  # noqa: E402
+import gen_prog  # noqa: E402
 
 from gen_common import header, footer, hero, optin_card, CHECK  # noqa: E402
 
@@ -62,7 +67,12 @@ LINKS = [
     ("Inzicht.dc.html#artikelen", "/inzicht#artikelen"), ("Inzicht.dc.html", "/inzicht"),
     ("Over.dc.html", "/over-trude"), ("Contact.dc.html", "/contact"),
     ("Welkom.dc.html", "/welkom"),
-]
+    ("Programmas.dc.html", "/programmas"),
+    ("Individueel.dc.html", "/programmas/individueel-programma"),
+    ("Havening.dc.html", "/programmas/havening-en-hypnose"),
+] + [(gen_prog.thema_href(t[0]), f"/programmas/havening-en-hypnose/{t[0]}") for t in gen_prog.THEMAS]
+
+MARKERS = {"PAY-IND": "individueel_betaallink", "PAY-HAV": "havening_betaallink", "BOOK-KM": "kennismaking_url"}
 
 
 def cut(html, start, end, keep_end=False):
@@ -76,6 +86,14 @@ def cut(html, start, end, keep_end=False):
 
 
 def fix(html, lang="nl"):
+    for mk, key in MARKERS.items():
+        if cfg[key]:
+            html = html.replace(f'href="{mk}"', f'href="{cfg[key]}"')
+        else:
+            html = re.sub(r'<a [^>]*href="' + mk + r'"[^>]*>.*?</a>', "", html, flags=re.S)
+            html = re.sub(r'<p class="ps"[^>]*>\s*</p>', "", html)
+    html = html.replace('<a class="btn" href="Afrekenen.dc.html"', '<a class="btn" data-chal-buy href="Afrekenen.dc.html"')
+    html = html.replace('<a class="btn" data-chal-buy href="Afrekenen.dc.html" style="display:block;margin-top:20px">', '<a class="btn" data-chal-buy href="Afrekenen.dc.html" style="display:block;margin-top:20px">')
     if cfg.get("challenge_betaallink_en"):
         html = html.replace('href="EN-Checkout"', f'href="{cfg["challenge_betaallink_en"]}"')
     else:
@@ -87,12 +105,13 @@ def fix(html, lang="nl"):
         html = html.replace('href="Afrekenen.dc.html"', f'href="{CHECKOUT}"')
         html = html.replace(" &#183; [betaalmethoden bevestigen]", "")
     else:
-        html = re.sub(r'<a class="btn" href="Afrekenen\.dc\.html"[^>]*>.*?</a>', "", html, flags=re.S)
+        html = re.sub(r'<a class="btn" data-chal-buy href="Afrekenen\.dc\.html"[^>]*>.*?</a>', "", html, flags=re.S)
         html = re.sub(r'<p class="ps"[^>]*>Veilig afrekenen via Plug&amp;Pay[^<]*</p>', "", html)
         html = html.replace('<div class="c1">\n<p class="kick">Geen verrassingen</p>', '<div class="c1" style="max-width:820px">\n<p class="kick">Geen verrassingen</p>')
     if not cfg["challenge_startdatum"]:
         html = re.sub(r'<div class="step"><div class="num">4</div><p[^>]*>Op \[startdatum\] begint dag 1\.</p></div>', "", html)
     else:
+        html = html.replace('<div class="step"><div class="num">4</div><p class="p" style="margin:8px 0 0">Op [startdatum]', '<div class="step" data-chal-hide><div class="num">4</div><p class="p" style="margin:8px 0 0">Op [startdatum]')
         html = html.replace("[startdatum]", cfg["challenge_startdatum"])
 
     # handboekformulier
@@ -151,6 +170,7 @@ def page(path, title, desc, body, lang="nl", noindex=False):
 </head>
 <body>
 {body}
+<script>(function(){{var d="{cfg['challenge_inschrijving_sluit']}";if(!d||new Date()<new Date(d+"T00:00:00"))return;var w="{cfg['challenge_wachtlijst_url'] or '/contact'}";document.querySelectorAll('[data-chal-buy]').forEach(function(a){{a.href=w;a.textContent="Zet me op de wachtlijst";}});document.querySelectorAll('[data-chal-date]').forEach(function(p){{p.textContent="Volgende ronde volgt. Zet je op de wachtlijst.";}});document.querySelectorAll('[data-chal-hide]').forEach(function(e){{e.style.display="none";}});}})();</script>
 <script>(function(){{var b=document.querySelector('.burger');if(!b)return;b.addEventListener('click',function(){{var h=b.closest('.hdr');var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}});document.querySelectorAll('.nav a').forEach(function(a){{a.addEventListener('click',function(){{var h=document.querySelector('.hdr');h.classList.remove('open');b.setAttribute('aria-expanded','false');}});}});}})();</script>
 </body>
 </html>
@@ -203,6 +223,18 @@ page("challenge.html", "Trigger Breakfree Challenge · TrudeThecla | ROOTS",
      "Zeven dagen, één patroon van jezelf, met Trude erbij. Ontdek wat je patroon aanzet en ervaar hoe het is als het niet meer automatisch aangaat.",
      fix(gen_sales.CHALLENGE))
 
+page("programmas.html", "Programma's · TrudeThecla | ROOTS",
+     "Werk met je patroon in het individuele programma, de Trigger Breakfree Challenge of drie sessies Havening en hypnose.",
+     fix(gen_prog.PROGRAMMAS))
+page("programmas/individueel-programma.html", "Individueel programma · TrudeThecla | ROOTS",
+     "Acht online sessies met Trude Kuin, op jouw patroon en in jouw tempo. Zodat je oude patroon niet meer automatisch beslist hoe jij reageert.",
+     fix(gen_prog.INDIVIDUEEL))
+page("programmas/havening-en-hypnose.html", "Havening & hypnose · TrudeThecla | ROOTS",
+     "Drie online sessies Havening en hypnose voor één thema: een reactie die terugkomt, spanning bij een moment, of een doel waar je op vastloopt.",
+     fix(gen_prog.HAVENING))
+for slug, (titel, sub, body) in gen_prog.THEMA_PAGES.items():
+    page(f"programmas/havening-en-hypnose/{slug}.html", f"{re.sub('&[^;]+;', '', titel)} · Havening & hypnose · TrudeThecla | ROOTS", re.sub(r"&#8217;", "’", sub), fix(body))
+
 inzicht = header("inz") + hero(
     "Inzicht", 'Waarom je patroon terugkomt, <span class="cam">en hoe je er anders naar kijkt.</span>',
     ["Artikelen en video&#8217;s over terugval, je verhaal en je neuro-biologie. Om te lezen, te kijken en te herkennen."],
@@ -251,8 +283,8 @@ welkom = header(minimal=True) + f'''
 '''
 page("welkom.html", "Welkom · TrudeThecla | ROOTS", "Welkom in de Trigger Breakfree Challenge.", fix(welkom), noindex=True)
 
-if cfg["masterclass_video_url"]:
-    mc = re.sub(r'<div class="vid" style="aspect-ratio:16/9;margin-top:10px">.*?</svg></div></div>',
+if cfg["masterclass_video_url"] or PREVIEW:
+    mc = gen_sales.MASTERCLASS if not cfg["masterclass_video_url"] else re.sub(r'<div class="vid" style="aspect-ratio:16/9;margin-top:10px">.*?</svg></div></div>',
                 f'<div class="vid" style="aspect-ratio:16/9;margin-top:10px"><iframe src="{cfg["masterclass_video_url"]}" title="Masterclass Zet je patroon uit bij de bron" style="width:100%;height:100%;border:0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>',
                 gen_sales.MASTERCLASS, flags=re.S)
     page("masterclass-zet-je-patroon-uit.html", "Masterclass Zet je patroon uit bij de bron · TrudeThecla | ROOTS",

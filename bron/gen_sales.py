@@ -20,7 +20,7 @@ def faq(q, a):
 
 FORK = '''<svg width="300" height="190" viewBox="0 0 300 190" fill="none" aria-hidden="true"><path d="M150 186 V110 C150 80 120 60 60 40 M150 110 C150 80 180 60 240 40" stroke="#BD9D60" stroke-width="2.2"></path><path d="M150 186 V110" stroke="#BD9D60" stroke-width="2.2"></path><circle cx="60" cy="40" r="7" fill="#BEA8A7"></circle><circle cx="240" cy="40" r="7" fill="#BD9D60"></circle><circle cx="150" cy="176" r="10" fill="#FFFFFF" stroke="#BD9D60" stroke-width="2"></circle></svg>'''
 
-CHALLENGE = header("chal") + f'''
+CHALLENGE = header("prog") + f'''
 <section style="padding:90px 0 110px;position:relative;overflow:hidden"><div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div><div class="w"><div class="row top" style="gap:72px">
 <div class="c1" style="flex:1.25 1 0">
 <p class="kick">Trigger Breakfree Challenge &#183; 7 dagen</p>
@@ -223,7 +223,20 @@ MASTERCLASS = header(minimal=True) + f'''
 <div class="vid" style="aspect-ratio:16/9;margin-top:10px"><img src="{PORTRAIT}" alt="Still uit de masterclass"><div class="play">{PLAY}</div></div>
 <div style="margin-top:14px">{tbc("Video", "Masterclassvideo (&#177; [duur] minuten) &#8212; Trude neemt hem nu op. Geluid start pas na klik; ondertiteling als die er is.")}</div>
 </div>
-<div class="c1" style="flex:1 1 0;position:sticky;top:24px">{buycard()}</div>
+<div class="c1" style="flex:1 1 0;position:sticky;top:24px"><div class="buy">
+<p class="cap">Je volgende stap</p>
+<h2 class="h2" style="font-size:26px;margin-bottom:22px">Doe het met &#233;&#233;n patroon van jezelf</h2>
+<div style="border:1px solid #BD9D60;padding:22px;border-radius:2px">
+<p class="cap" style="margin-bottom:6px">1 &#183; Nu starten</p>
+<h3 class="h3">Individueel programma</h3>
+<p class="ps" style="font-size:15px;margin-bottom:16px">8 online sessies met mij, op jouw patroon. &#8364;1.335</p>
+<a class="btn" href="Individueel.dc.html" style="display:block">Ja, ik wil nu starten</a></div>
+<div style="border:1px solid #E0CFC0;padding:22px;border-radius:2px;margin-top:16px">
+<p class="cap" style="margin-bottom:6px">2 &#183; In een groep</p>
+<h3 class="h3">Trigger Breakfree Challenge</h3>
+<p class="ps" style="font-size:15px;margin-bottom:16px">7 dagen, met de community erbij. Start 14 december.</p>
+<a class="btn" href="Challenge.dc.html" style="display:block" data-chal-info>Bekijk de Challenge</a></div>
+</div></div>
 </div></div></section>
 
 <section style="padding:20px 0 90px"><div class="w"><div style="max-width:740px">
@@ -235,14 +248,17 @@ MASTERCLASS = header(minimal=True) + f'''
 </ul>
 </div></div></section>
 
-<section class="sec white"><div class="w"><div class="row" style="gap:70px">
-<div class="c1">
-<p class="kick">Alles over de start en de prijs</p>
-<h2 class="h2">Wil je dit met &#233;&#233;n patroon van jezelf doen, stap voor stap, met mij erbij?</h2>
-<p class="p">In de masterclass laat ik zien d&#225;t het zo werkt. In de Trigger Breakfree Challenge ga je het doen. Zeven dagen, &#233;&#233;n patroon, samen met anderen die dit herkennen. Ik kijk mee.</p>
-<div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap"><a class="btn" href="Afrekenen.dc.html">Ja, ik doe mee</a><a class="btn2" href="Challenge.dc.html">Lees eerst alles over de Challenge &#8594;</a></div>
+<section class="sec white"><div class="w">
+<div class="wn" style="padding:0;text-align:center;max-width:820px;margin:0 auto">
+<p class="kick">En nu?</p>
+<h2 class="h2">Begrijpen is niet hetzelfde als ervaren.</h2>
+<p class="p">In de masterclass laat ik zien d&#225;t het zo werkt. Je patroon verandert pas als je het bij jezelf doet, met &#233;&#233;n patroon van jezelf en met iemand erbij die ziet wat jij op dat moment niet ziet. Je kunt kiezen hoe.</p>
 </div>
-</div></div></section>
+<div class="grid2" style="margin-top:46px;max-width:980px;margin-left:auto;margin-right:auto">
+<div class="card" style="border:1px solid #BD9D60;background:#FAF1E8"><p class="cap">1 &#183; Nu starten &#183; &#233;&#233;n op &#233;&#233;n</p><h3 class="h3" style="font-size:26px;font-weight:400">Individueel programma</h3><p class="p">Acht online sessies met mij. Dezelfde stappen als in de Challenge, volledig afgestemd op jouw patroon en jouw tempo. Je kunt meteen beginnen.</p><p class="ps" style="font-weight:600;margin-bottom:20px">&#8364;1.335 &#183; 8 online sessies</p><a class="btn" href="Individueel.dc.html">Ja, ik wil nu starten</a></div>
+<div class="card" style="background:#FAF1E8"><p class="cap">2 &#183; In een groep &#183; 7 dagen</p><h3 class="h3" style="font-size:26px;font-weight:400">Trigger Breakfree Challenge</h3><p class="p">Zeven dagen, &#233;&#233;n patroon van jezelf. Elke dag een korte video en &#233;&#233;n ding om te doen, samen met anderen die dit herkennen. Ik kijk mee.</p><p class="ps" style="font-weight:600;margin-bottom:20px" data-chal-date>Start 14 december</p><a class="btn" href="Challenge.dc.html" data-chal-info>Bekijk de Challenge</a></div>
+</div>
+</div></section>
 <section style="padding:40px 0"><div class="w" style="text-align:center"><p class="ps">&#169; TrudeThecla &#183; <a href="#">Privacyverklaring</a></p></div></section>
 '''
 
