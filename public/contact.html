@@ -27,18 +27,16 @@
 </div>
 </div>
 <div class="c1" style="flex:1.1 1 0">
-<div class="buy" style="position:relative;padding:36px 36px 30px">
-<div style="display:flex;gap:22px;align-items:center;margin-bottom:22px">
-<img src="/img/omslag-handboek.jpg" alt="Omslag Handboek Patroon-Reset" style="width:96px;flex:0 0 96px;box-shadow:0 10px 24px rgba(120,95,60,.18)">
-<div><p class="kick" style="margin-bottom:8px">Gratis handboek</p><h2 class="h2" style="font-size:26px;margin:0">Handboek Patroon-Reset</h2></div>
-</div>
-<p class="ps" style="font-size:16px;margin-bottom:20px">Ontdek waarom je patroon terugkomt terwijl je het allang begrijpt. En waar echte verandering begint.</p>
-<form action="/bedankt" method="get">
-<div class="field"><label>Voornaam</label><input type="text" name="voornaam" autocomplete="given-name" placeholder="Je voornaam" aria-label="Voornaam" required></div>
-<div class="field"><label>E-mailadres</label><input type="email" name="email" autocomplete="email" placeholder="jij@voorbeeld.nl" aria-label="E-mailadres" required></div>
-<button class="btn" type="submit" style="display:block;width:100%;margin-top:8px">Stuur mij het handboek</button></form>
-<p class="ps" style="font-size:13px;margin-top:14px">Elf pagina&#8217;s, direct in je mailbox. Uitschrijven kan altijd. </p>
-</div>
+<form class="buy" id="cform" action="mailto:info@trudethecla.nl" method="post" enctype="text/plain" style="padding:40px;position:relative;z-index:1">
+<p class="kick" style="margin-bottom:8px">Stuur een bericht</p>
+<div class="grid2" style="gap:16px"><div class="field"><label for="c1">Naam *</label><input id="c1" name="naam" type="text" autocomplete="name" required></div>
+<div class="field"><label for="c2">E-mailadres *</label><input id="c2" name="email" type="email" autocomplete="email" required></div></div>
+<p class="field" style="margin-bottom:10px"><label>Kies hier je thema</label><span class="ps" style="font-size:13px">Meerdere mogelijk</span></p>
+<div class="chips"><label class="chip"><input type="checkbox" name="thema" value="Patronen doorbreken"><span>Patronen doorbreken</span></label><label class="chip"><input type="checkbox" name="thema" value="Energieboost"><span>Energieboost</span></label><label class="chip"><input type="checkbox" name="thema" value="Gewoontes veranderen"><span>Gewoontes veranderen</span></label><label class="chip"><input type="checkbox" name="thema" value="Rust in je systeem"><span>Rust in je systeem</span></label><label class="chip"><input type="checkbox" name="thema" value="Relaties"><span>Relaties</span></label><label class="chip"><input type="checkbox" name="thema" value="Je doel bereiken"><span>Je doel bereiken</span></label><label class="chip"><input type="checkbox" name="thema" value="Richting en zingeving"><span>Richting en zingeving</span></label><label class="chip"><input type="checkbox" name="thema" value="Iets anders"><span>Iets anders</span></label></div>
+<div class="field" style="margin-top:22px"><label for="c3">Vertel me meer</label><textarea id="c3" name="bericht" rows="7" placeholder="Waar loop je tegenaan, of wat wil je bereiken?"></textarea></div>
+<label style="display:flex;gap:10px;font-size:14px;line-height:1.5;margin:4px 0 20px"><input type="checkbox" required> Ik ga akkoord met de <a href="#">privacyverklaring</a>.</label>
+<button class="btn" type="submit" style="width:100%">Verstuur &#8594;</button>
+</form>
 </div>
 </div></div></section>
 <footer class="ftr"><div class="w"><div class="cols">
