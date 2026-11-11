@@ -22,6 +22,7 @@ def offer(cap, title, items, prijs, prijs_sub, btn_label, btn_href):
 <p class="ps" style="font-size:14px;margin:4px 0 0">{prijs_sub}</p>
 <a class="btn" href="{btn_href}" style="display:block;margin-top:22px">{btn_label}</a>
 <p class="ps" style="text-align:center;margin-top:16px">{kennismaking("Eerst kennismaken? Plan 20 minuten gratis")}</p>
+<p class="ps" style="text-align:center;margin-top:12px"><a class="btn2" href="WA-LINK">Liever eerst een vraag? App me &#8594;</a></p>
 </div>'''
 
 IND_OFFER = offer("Individueel programma", "Jouw patroon, met mij &#233;&#233;n op &#233;&#233;n",
@@ -61,7 +62,7 @@ PROGRAMMAS = header("prog") + hero(
 <p class="kick">Twijfel je wat bij je past?</p>
 <h2 class="h2">Laten we 20 minuten praten.</h2>
 <p class="p">Je vertelt waar je tegenaan loopt. Ik vertel eerlijk welk programma daarbij past, of dat geen van allemaal past. Gratis en online.</p>
-<a class="btn" href="{BOOK}">Plan een gratis kennismaking</a>
+<div style="display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap"><a class="btn" href="{BOOK}">Plan een gratis kennismaking</a><a class="btn2" href="WA-LINK">Of app me &#8594;</a></div>
 </div></section>
 ''' + footer()
 

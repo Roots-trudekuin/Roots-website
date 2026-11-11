@@ -82,7 +82,7 @@ OVER = header("over") + f'''
 <p class="kick">Waarom ROOTS bestaat</p>
 <h2 class="h2">Worden wie je had kunnen zijn. Voordat je over twintig jaar terugkijkt en denkt: had ik dit maar eerder geweten.</h2>
 <p class="p">Geen guru. Geen levenslange begeleiding. Een gids die je het ambacht leert, zodat je je patronen zelf kunt bijstellen. Ook later. Zonder mij.</p>
-<div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:34px"><a class="btn" href="Challenge.dc.html">Bekijk de Challenge</a><a class="btn2" href="Main.dc.html#handboek" style="align-self:center">Of begin met het gratis handboek &#8594;</a></div>
+<div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:34px"><a class="btn" href="Programmas.dc.html">Werk met mij</a><a class="btn2" href="WA-LINK" style="align-self:center">Of app me eerst &#8594;</a></div>
 </div></section>
 ''' + footer()
 
@@ -166,8 +166,8 @@ BLOG = header("blog") + f'''
 CONTACT = header("contact") + f'''
 <section style="padding:90px 0 110px"><div class="w"><div class="row top" style="gap:80px">
 <div class="c1" style="flex:1.25 1 0">
-<p class="kick">Contact</p><h1 class="h1">Een vraag? Stuur me een bericht.</h1>
-<p class="p">Over de challenge, je aanmelding, je toegang, of iets anders. Ik lees alles zelf en antwoord binnen [termijn].</p>
+<p class="kick">Contact</p><h1 class="h1">Een vraag? App of mail me.</h1>
+<p class="p">Over de challenge, je aanmelding, je toegang, of iets anders. Ik lees alles zelf en antwoord binnen [termijn].</p><p style="margin:0 0 26px"><a class="btn" href="WA-LINK">App me via WhatsApp</a></p>
 <form class="card" style="margin-top:20px">
 <div class="field"><label for="c1">Naam</label><input id="c1" type="text"></div>
 <div class="field"><label for="c2">E-mailadres</label><input id="c2" type="email"></div>

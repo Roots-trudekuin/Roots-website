@@ -20,6 +20,11 @@ PREVIEW = os.environ.get("PREVIEW") == "1"   # alleen voor previews: lege knopli
 if PREVIEW:
     for k in ("challenge_betaallink", "individueel_betaallink", "havening_betaallink", "kennismaking_url"):
         cfg[k] = cfg[k] or "#"
+    cfg["whatsapp_nummer"] = cfg["whatsapp_nummer"] or "31600000000"
+_nr = re.sub(r"\D", "", cfg.get("whatsapp_nummer", ""))
+if _nr.startswith("06"):
+    _nr = "31" + _nr[1:]
+cfg["_wa"] = f"https://wa.me/{_nr}?text=Hoi%20Trude%2C%20ik%20heb%20een%20vraag%20over%20" if _nr else ""
 
 sys.path.insert(0, HERE)
 os.chdir(tempfile.mkdtemp())          # de ontwerpbronnen schrijven hun canvasbestanden hierheen
@@ -72,7 +77,7 @@ LINKS = [
     ("Havening.dc.html", "/programmas/havening-en-hypnose"),
 ] + [(gen_prog.thema_href(t[0]), f"/programmas/havening-en-hypnose/{t[0]}") for t in gen_prog.THEMAS]
 
-MARKERS = {"PAY-IND": "individueel_betaallink", "PAY-HAV": "havening_betaallink", "BOOK-KM": "kennismaking_url"}
+MARKERS = {"WA-LINK": "_wa", "PAY-IND": "individueel_betaallink", "PAY-HAV": "havening_betaallink", "BOOK-KM": "kennismaking_url"}
 
 
 def cut(html, start, end, keep_end=False):
@@ -157,6 +162,7 @@ def fix(html, lang="nl"):
 
 def page(path, title, desc, body, lang="nl", noindex=False):
     robots = '<meta name="robots" content="noindex">' if noindex else ""
+    wa_float = f'<a class="wa" href="{cfg["_wa"]}" target="_blank" rel="noopener" aria-label="App Trude via WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg><span>App me</span></a>' if cfg["_wa"] and lang == "nl" else ""
     html = f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -170,6 +176,7 @@ def page(path, title, desc, body, lang="nl", noindex=False):
 </head>
 <body>
 {body}
+{wa_float}
 <script>(function(){{var d="{cfg['challenge_inschrijving_sluit']}";if(!d||new Date()<new Date(d+"T00:00:00"))return;var w="{cfg['challenge_wachtlijst_url'] or '/contact'}";document.querySelectorAll('[data-chal-buy]').forEach(function(a){{a.href=w;a.textContent="Zet me op de wachtlijst";}});document.querySelectorAll('[data-chal-date]').forEach(function(p){{p.textContent="Volgende ronde volgt. Zet je op de wachtlijst.";}});document.querySelectorAll('[data-chal-hide]').forEach(function(e){{e.style.display="none";}});}})();</script>
 <script>(function(){{var b=document.querySelector('.burger');if(!b)return;b.addEventListener('click',function(){{var h=b.closest('.hdr');var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');}});document.querySelectorAll('.nav a').forEach(function(a){{a.addEventListener('click',function(){{var h=document.querySelector('.hdr');h.classList.remove('open');b.setAttribute('aria-expanded','false');}});}});}})();</script>
 </body>
@@ -187,6 +194,9 @@ def page(path, title, desc, body, lang="nl", noindex=False):
 
 MOBILE_CSS = """
 html{scroll-behavior:smooth}
+.wa{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;align-items:center;gap:10px;background:#BD9D60;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:14px 20px;border-radius:40px;box-shadow:0 10px 26px rgba(120,95,60,.28)}
+.wa:hover{background:#A98A50;color:#FFFFFF}
+@media (max-width:900px){.wa span{display:none}.wa{padding:15px;right:16px;bottom:16px}}
 .mnav{display:none}
 @media (max-width:900px){
  .hdr{position:relative}

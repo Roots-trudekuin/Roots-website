@@ -105,6 +105,9 @@ a{color:#8C7240}a:hover{color:#333333}
 }
 
 html{scroll-behavior:smooth}
+.wa{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;align-items:center;gap:10px;background:#BD9D60;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:14px 20px;border-radius:40px;box-shadow:0 10px 26px rgba(120,95,60,.28)}
+.wa:hover{background:#A98A50;color:#FFFFFF}
+@media (max-width:900px){.wa span{display:none}.wa{padding:15px;right:16px;bottom:16px}}
 .mnav{display:none}
 @media (max-width:900px){
  .hdr{position:relative}
