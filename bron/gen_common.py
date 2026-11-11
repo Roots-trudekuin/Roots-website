@@ -87,6 +87,12 @@ a{color:#8C7240}a:hover{color:#333333}
 .field{display:flex;flex-direction:column;gap:6px;margin:0 0 16px}
 .field label{font-size:13px;font-weight:600;letter-spacing:.06em}
 .field input,.field textarea,.field select{font-family:inherit;font-size:16px;padding:15px 16px;border:1px solid #D9C7B0;border-radius:2px;background:#FFFFFF;color:#333333}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{cursor:pointer}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;border:1px solid #D9C7B0;border-radius:40px;padding:10px 16px;font-size:14px;background:#FFFFFF;color:#333333}
+.chip input:checked+span{background:#BD9D60;border-color:#BD9D60;color:#FFFFFF}
+.chip input:focus-visible+span{outline:2px solid #8C7240;outline-offset:2px}
 .quote{font-size:24px;line-height:1.55;font-weight:300;font-style:italic}
 @media (max-width:900px){
  .w,.wn{padding:0 22px}

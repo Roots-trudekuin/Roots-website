@@ -82,7 +82,7 @@ OVER = header("over") + f'''
 <p class="kick">Waarom ROOTS bestaat</p>
 <h2 class="h2">Worden wie je had kunnen zijn. Voordat je over twintig jaar terugkijkt en denkt: had ik dit maar eerder geweten.</h2>
 <p class="p">Geen guru. Geen levenslange begeleiding. Een gids die je het ambacht leert, zodat je je patronen zelf kunt bijstellen. Ook later. Zonder mij.</p>
-<div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:34px"><a class="btn" href="Programmas.dc.html">Werk met mij</a><a class="btn2" href="WA-LINK" style="align-self:center">Of app me eerst &#8594;</a></div>
+<div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:34px"><a class="btn" href="Contact.dc.html">Werk met mij</a><a class="btn2" href="Contact.dc.html" style="align-self:center">Of laten we eerst praten &#8594;</a></div>
 </div></section>
 ''' + footer()
 
@@ -164,20 +164,33 @@ BLOG = header("blog") + f'''
 ''' + footer()
 
 CONTACT = header("contact") + f'''
-<section style="padding:90px 0 110px"><div class="w"><div class="row top" style="gap:80px">
-<div class="c1" style="flex:1.25 1 0">
-<p class="kick">Contact</p><h1 class="h1">Een vraag? App of mail me.</h1>
-<p class="p">Over de challenge, je aanmelding, je toegang, of iets anders. Ik lees alles zelf en antwoord binnen [termijn].</p><p style="margin:0 0 26px"><a class="btn" href="WA-LINK">App me via WhatsApp</a></p>
-<form class="card" style="margin-top:20px">
-<div class="field"><label for="c1">Naam</label><input id="c1" type="text"></div>
-<div class="field"><label for="c2">E-mailadres</label><input id="c2" type="email"></div>
-<div class="field"><label for="c3">Je bericht</label><textarea id="c3" rows="6"></textarea></div>
-<label style="display:flex;gap:10px;font-size:14px;line-height:1.5;margin:4px 0 20px"><input type="checkbox"> Ik ga akkoord met de <a href="#">privacyverklaring</a>.</label>
-<button class="btn" type="button">Verstuur</button>
-<div style="margin-top:18px">{tbc("Koppeling", "Formulier naar je e-mailadres [bevestigen]; met bevestigings- en foutmelding.")}</div>
+<section style="padding:90px 0 110px;position:relative;overflow:hidden"><div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div><div class="w"><div class="row top" style="gap:72px">
+<div class="c1" style="flex:1 1 0">
+<p class="kick">Contact</p><h1 class="h1">Laten we <span class="cam">praten.</span></h1>
+<p class="lead">Een vraag, een idee, of alleen een gevoel dat het tijd is voor iets anders? Vertel het me. Het hoeft nog niet helemaal helder te zijn. Ik lees alles zelf.</p>
+<div style="display:flex;flex-direction:column;gap:14px;margin:34px 0 0;max-width:420px">
+<a class="btn" href="WA-DIRECT">App me via WhatsApp</a>
+<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Plan een gratis kennismaking van 20 minuten &#8594;</a>
+</div>
+<p class="kick" style="margin-top:64px">Wat gebeurt er daarna?</p>
+<div style="display:flex;flex-direction:column;gap:22px">
+<div class="step"><div class="num">1</div><div><h3 class="h3">Ik lees je bericht</h3><p class="ps">Zelf, en met aandacht.</p></div></div>
+<div class="step"><div class="num">2</div><div><h3 class="h3">Ik neem contact met je op</h3><p class="ps">Met een antwoord, een vraag terug, of een voorstel voor een kennismaking.</p></div></div>
+<div class="step"><div class="num">3</div><div><h3 class="h3">We kijken samen wat past</h3><p class="ps">Eerlijk. Ook als dat betekent dat iets anders beter bij je past.</p></div></div>
+</div>
+</div>
+<div class="c1" style="flex:1.1 1 0">
+<form class="buy" id="cform" FORM-ATTR style="padding:40px;position:relative;z-index:1">
+<p class="kick" style="margin-bottom:8px">Stuur een bericht</p>
+<div class="grid2" style="gap:16px"><div class="field"><label for="c1">Naam *</label><input id="c1" name="naam" type="text" autocomplete="name" required></div>
+<div class="field"><label for="c2">E-mailadres *</label><input id="c2" name="email" type="email" autocomplete="email" required></div></div>
+<p class="field" style="margin-bottom:10px"><label>Kies hier je thema</label><span class="ps" style="font-size:13px">Meerdere mogelijk</span></p>
+<div class="chips"><label class="chip"><input type="checkbox" name="thema" value="Patronen doorbreken"><span>Patronen doorbreken</span></label><label class="chip"><input type="checkbox" name="thema" value="Energieboost"><span>Energieboost</span></label><label class="chip"><input type="checkbox" name="thema" value="Gewoontes veranderen"><span>Gewoontes veranderen</span></label><label class="chip"><input type="checkbox" name="thema" value="Rust in je systeem"><span>Rust in je systeem</span></label><label class="chip"><input type="checkbox" name="thema" value="Relaties"><span>Relaties</span></label><label class="chip"><input type="checkbox" name="thema" value="Je doel bereiken"><span>Je doel bereiken</span></label><label class="chip"><input type="checkbox" name="thema" value="Richting en zingeving"><span>Richting en zingeving</span></label><label class="chip"><input type="checkbox" name="thema" value="Iets anders"><span>Iets anders</span></label></div>
+<div class="field" style="margin-top:22px"><label for="c3">Vertel me meer</label><textarea id="c3" name="bericht" rows="7" placeholder="Waar loop je tegenaan, of wat wil je bereiken?"></textarea></div>
+<label style="display:flex;gap:10px;font-size:14px;line-height:1.5;margin:4px 0 20px"><input type="checkbox" required> Ik ga akkoord met de <a href="#">privacyverklaring</a>.</label>
+<button class="btn" type="submit" style="width:100%">Verstuur &#8594;</button>
 </form>
 </div>
-<div class="c1" style="flex:1 1 0">{optin_card()}</div>
 </div></div></section>
 ''' + footer()
 

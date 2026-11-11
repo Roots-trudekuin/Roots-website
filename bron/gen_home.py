@@ -22,7 +22,7 @@ HOME = header("home") + f'''
 <p class="lead" style="margin-bottom:36px">Pas daarna zie je het: daar ging het weer. Terwijl je precies weet waar het vandaan komt.</p>
 <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
 <a class="btn" href="Optin.dc.html">Ja, stuur mij het gratis handboek</a>
-<a class="btn2" href="Programmas.dc.html">Of werk direct met mij &#8594;</a>
+<a class="btn2" href="Contact.dc.html">Of werk direct met mij &#8594;</a>
 </div>
 </div>
 <div class="c1" style="flex:1 1 0">{optin_card()}</div>
@@ -96,7 +96,7 @@ HOME = header("home") + f'''
 <h2 class="h2">Ik ben Trude.</h2>
 <p class="p">Sinds 1988 begeleid ik mensen bij persoonlijke veranderprocessen. Als consulent, coach, hypnotherapeut en Havening practitioner. Duizenden mensen.</p>
 <p class="p">Al die jaren hield &#233;&#233;n vraag me bezig: hoe help ik mensen zo te veranderen dat ze daar blijvend zelf invloed op krijgen? Uit die vraag groeide ROOTS: de methode waarmee je je patroon uitzet bij de bron.</p>
-<div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap"><a class="btn" href="Programmas.dc.html">Werk met mij</a><a class="btn2" href="Over.dc.html">Lees mijn verhaal &#8594;</a></div>
+<div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap"><a class="btn" href="Contact.dc.html">Werk met mij</a><a class="btn2" href="Over.dc.html">Lees mijn verhaal &#8594;</a></div>
 </div>
 </div></div></section>
 

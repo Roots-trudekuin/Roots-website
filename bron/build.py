@@ -24,7 +24,7 @@ if PREVIEW:
 _nr = re.sub(r"\D", "", cfg.get("whatsapp_nummer", ""))
 if _nr.startswith("06"):
     _nr = "31" + _nr[1:]
-cfg["_wa"] = f"https://wa.me/{_nr}?text=Hoi%20Trude%2C%20ik%20heb%20een%20vraag%20over%20" if _nr else ""
+cfg["_wa"] = f"https://wa.me/{_nr}" if _nr else ""
 
 sys.path.insert(0, HERE)
 os.chdir(tempfile.mkdtemp())          # de ontwerpbronnen schrijven hun canvasbestanden hierheen
@@ -77,7 +77,7 @@ LINKS = [
     ("Havening.dc.html", "/programmas/havening-en-hypnose"),
 ] + [(gen_prog.thema_href(t[0]), f"/programmas/havening-en-hypnose/{t[0]}") for t in gen_prog.THEMAS]
 
-MARKERS = {"WA-LINK": "_wa", "PAY-IND": "individueel_betaallink", "PAY-HAV": "havening_betaallink", "BOOK-KM": "kennismaking_url"}
+MARKERS = {"WA-DIRECT": "_wa", "PAY-IND": "individueel_betaallink", "PAY-HAV": "havening_betaallink", "BOOK-KM": "kennismaking_url"}
 
 
 def cut(html, start, end, keep_end=False):
@@ -162,7 +162,7 @@ def fix(html, lang="nl"):
 
 def page(path, title, desc, body, lang="nl", noindex=False):
     robots = '<meta name="robots" content="noindex">' if noindex else ""
-    wa_float = f'<a class="wa" href="{cfg["_wa"]}" target="_blank" rel="noopener" aria-label="App Trude via WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg><span>App me</span></a>' if cfg["_wa"] and lang == "nl" else ""
+    wa_float = '<a class="wa" href="/contact" aria-label="Laten we praten"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/></svg><span>Laten we praten</span></a>' if lang == "nl" and path != "contact.html" else ""
     html = f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -260,17 +260,15 @@ page("over-trude.html", "Over Trude · TrudeThecla | ROOTS",
      "Trude Kuin begeleidt sinds 1988 mensen bij persoonlijke verandering en ontwikkelde ROOTS: de methode waarmee je je patroon uitzet bij de bron.",
      fix(gen_pages.OVER))
 
-contact = gen_pages.CONTACT.replace(" Ik lees alles zelf en antwoord binnen [termijn].", " Ik lees alles zelf.")
+contact = gen_pages.CONTACT
 c_act = CONTACT_ACTION or (f"mailto:{cfg['contact_email']}" if cfg["contact_email"] else "")
 if c_act:
-    contact = contact.replace('<form class="card" style="margin-top:20px">', f'<form class="card" style="margin-top:20px" action="{c_act}" method="post"' + (' enctype="text/plain"' if c_act.startswith("mailto:") else "") + ">")
-    contact = contact.replace('<input id="c1" type="text">', '<input id="c1" name="naam" type="text" required>')
-    contact = contact.replace('<input id="c2" type="email">', '<input id="c2" name="email" type="email" required>')
-    contact = contact.replace('<textarea id="c3" rows="6"></textarea>', '<textarea id="c3" name="bericht" rows="6" required></textarea>')
-    contact = contact.replace('<button class="btn" type="button">Verstuur</button>', '<button class="btn" type="submit">Verstuur</button>')
+    contact = contact.replace("FORM-ATTR", f'action="{c_act}" method="post"' + (' enctype="text/plain"' if c_act.startswith("mailto:") else ""))
+elif PREVIEW:
+    contact = contact.replace(" FORM-ATTR", "")
 else:
-    contact = cut(contact, '<form class="card" style="margin-top:20px">', "</form>")
-    contact = contact.replace("Stuur me een bericht.</h1>", "Stuur me een bericht.</h1>")
+    print("  let op: contactformulier verborgen, vul contact_formulier_action of contact_email in")
+    contact = re.sub(r'<form class="buy" id="cform".*?</form>', optin_card(), contact, flags=re.S)
 page("contact.html", "Contact · TrudeThecla | ROOTS", "Een vraag over de Trigger Breakfree Challenge, je aanmelding of je toegang? Stuur Trude een bericht.", fix(contact))
 
 bedankt = cut(gen_home.BEDANKT, '<section style="padding:70px 0"><div class="wn" style="text-align:center">\n<p class="cap">Gratis community</p>', "</div></section>")
