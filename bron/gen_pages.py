@@ -68,7 +68,7 @@ OVER = header("over") + f'''
 </div></section>
 
 <section class="sec"><div class="w"><div class="row" style="gap:70px">
-<div class="c1"><div class="vid" style="aspect-ratio:16/9;background:#E9DCCD"><img src="{PORTRAIT}" alt="" style="opacity:.6"><div class="play">{PLAY}</div></div><div style="margin-top:12px">{tbc("Video", "Persoonlijke video uit je eigen omgeving &#8212; nog op te nemen.")}</div></div>
+<div class="c1" style="flex:0 0 440px"><div class="photo"><span class="tape"></span><img src="/img/trude-2.jpg" alt="Trude Kuin"></div></div>
 <div class="c1">
 <p class="kick">Hoe ROOTS groeide</p>
 <h2 class="h2">Van losse inzichten naar een methode.</h2>
