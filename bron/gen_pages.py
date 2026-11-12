@@ -166,12 +166,8 @@ BLOG = header("blog") + f'''
 CONTACT = header("contact") + f'''
 <section style="padding:90px 0 110px;position:relative;overflow:hidden"><div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div><div class="w"><div class="row top" style="gap:72px">
 <div class="c1" style="flex:1 1 0">
-<p class="kick">Contact</p><h1 class="h1">Laten we <span class="cam">praten.</span></h1>
+<p class="kick">Contact</p><h1 class="h1">Voel je <span class="cam">vrij.</span></h1>
 <p class="lead">Een vraag, een idee, of alleen een gevoel dat het tijd is voor iets anders? Vertel het me. Het hoeft nog niet helemaal helder te zijn. Ik lees alles zelf.</p>
-<div style="display:flex;flex-direction:column;gap:14px;margin:34px 0 0;max-width:420px">
-<a class="btn" href="WA-DIRECT">App me via WhatsApp</a>
-<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Gratis kennismaking (20 min) &#8594;</a>
-</div>
 <p class="kick" style="margin-top:64px">Wat gebeurt er daarna?</p>
 <div style="display:flex;flex-direction:column;gap:22px">
 <div class="step"><div class="num">1</div><div><h3 class="h3">Ik lees je bericht</h3><p class="ps">Zelf, en met aandacht.</p></div></div>

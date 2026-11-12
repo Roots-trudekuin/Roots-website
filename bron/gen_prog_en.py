@@ -335,12 +335,8 @@ _chips = ''.join(f'<label class="chip"><input type="checkbox" name="theme" value
 EN_CONTACT2 = header_en("contact") + f'''
 <section style="padding:90px 0 110px;position:relative;overflow:hidden"><div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div><div class="w"><div class="row top" style="gap:72px">
 <div class="c1" style="flex:1 1 0">
-<p class="kick">Contact</p><h1 class="h1">Let&#8217;s <span class="cam">talk.</span></h1>
+<p class="kick">Contact</p><h1 class="h1">Feel <span class="cam">free.</span></h1>
 <p class="lead">A question, an idea, or just a feeling that it&#8217;s time for something different? Tell me. It doesn&#8217;t have to be completely clear yet. I read everything myself.</p>
-<div style="display:flex;flex-direction:column;gap:14px;margin:34px 0 0;max-width:420px">
-<a class="btn" href="WA-DIRECT">Message me on WhatsApp</a>
-<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Free consultation (20 min) &#8594;</a>
-</div>
 <p class="kick" style="margin-top:64px">What happens next?</p>
 <div style="display:flex;flex-direction:column;gap:22px">
 <div class="step"><div class="num">1</div><div><h3 class="h3">I read your message</h3><p class="ps">Myself, and with attention.</p></div></div>
