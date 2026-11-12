@@ -29,8 +29,8 @@ IND_OFFER = offer("Individueel programma", "Jouw patroon, met mij &#233;&#233;n 
                   ["8 online sessies met mij", "Jouw patroon is het werkmateriaal", "Dezelfde stappen als de Challenge, in jouw tempo"],
                   PRIJS_IND, "Voor het hele programma van 8 sessies", "Ja, ik wil starten", PAY_IND)
 
-HAV_OFFER = offer("Havening &amp; hypnose", "3 sessies voor &#233;&#233;n thema",
-                  ["3 online sessies van 1,5 uur", "&#201;&#233;n thema dat jij kiest", "Havening en hypnose gecombineerd"],
+HAV_OFFER = offer("Havening &amp; hypnose", "3 sessies voor &#233;&#233;n doel",
+                  ["3 online sessies van 1,5 uur", "&#201;&#233;n doel of blokkade die jij kiest", "Havening en hypnose gecombineerd"],
                   PRIJS_HAV, "Voor 3 sessies samen", "Boek 3 sessies", PAY_HAV)
 
 def sessie(n, titel, tekst):
@@ -55,7 +55,7 @@ PROGRAMMAS = header("prog") + hero(
 <div class="grid3" style="margin-top:46px">
 {progcard("&#201;&#233;n op &#233;&#233;n &#183; 8 sessies", "Individueel programma", "Je werkt met &#233;&#233;n patroon van jezelf, samen met mij. Dezelfde stappen als in de Challenge, maar dan helemaal afgestemd op jou en in jouw tempo. Online.", "Individueel.dc.html", "Bekijk het programma", f'<p class="ps" style="margin-bottom:20px;font-weight:600">{PRIJS_IND} &#183; 8 online sessies</p>')}
 {progcard("In een groep &#183; 7 dagen", "Trigger Breakfree Challenge", "Zeven dagen, &#233;&#233;n patroon van jezelf. Elke dag een korte video en &#233;&#233;n ding om te doen, met de community erbij. Ik kijk mee.", "Challenge.dc.html", "Bekijk de Challenge", '<p class="ps" style="margin-bottom:20px;font-weight:600" data-chal-date>Start 14 december</p>')}
-{progcard("Kort traject &#183; 3 sessies", "Havening &amp; hypnose", "Voor &#233;&#233;n duidelijk thema: een reactie die steeds terugkomt, spanning bij een bepaald moment, of een doel waar je op vastloopt.", "Havening.dc.html", "Bekijk de thema&#8217;s", f'<p class="ps" style="margin-bottom:20px;font-weight:600">{PRIJS_HAV} &#183; 3 online sessies van 1,5 uur</p>')}
+{progcard("Kort traject &#183; 3 sessies", "Havening &amp; hypnose", "Voor &#233;&#233;n doel of blokkade: spanning bij een belangrijk moment, vastlopen op weg naar je doel, of een keuze die je niet durft te maken.", "Havening.dc.html", "Bekijk de thema&#8217;s", f'<p class="ps" style="margin-bottom:20px;font-weight:600">{PRIJS_HAV} &#183; 3 online sessies van 1,5 uur</p>')}
 </div>
 </div></section>
 <section class="sec"><div class="wn" style="text-align:center">
@@ -159,22 +159,22 @@ INDIVIDUEEL = header("prog") + hero(
 
 # ---------------------------------------------------------------- Havening & hypnose
 THEMAS = [
-    ("reactie-die-terugkomt", "Een reactie die steeds terugkomt",
-     "Je weet hoe je wilt reageren. En toch neemt die ene reactie het steeds over.",
-     ["Je wordt fel, terwijl je rustig wilde blijven", "Je zegt ja, terwijl je nee bedoelt", "Je klapt dicht in een gesprek dat ertoe doet", "Achteraf denk je: nu doe ik het w&#233;&#233;r"],
-     "We kiezen &#233;&#233;n reactie die steeds terugkomt. We kijken naar het moment waarop hij aangaat, en werken met wat er dan in je lijf gebeurt. Het doel: dat die reactie niet meer automatisch aangaat, zodat je zelf kunt kiezen."),
     ("spanning-bij-een-moment", "Spanning bij een specifiek moment",
-     "Een presentatie, een lastig gesprek, een afspraak die eraan komt. Je lijf zet zich al schrap voordat het zover is.",
-     ["Je slaapt slecht voor een belangrijk gesprek", "Je lijf spant zich aan zodra je eraan denkt", "Je stelt dingen uit omdat het moment zo zwaar voelt", "Je wilt het goed doen, en juist daardoor lukt het minder"],
+     "Een presentatie, een examen, een belangrijk gesprek. Je lijf zet zich al schrap voordat het zover is.",
+     ["Je slaapt slecht voor een belangrijk moment", "Je lijf spant zich aan zodra je eraan denkt", "Je stelt het uit omdat het zo zwaar voelt", "Je wilt het goed doen, en juist daardoor lukt het minder"],
      "We nemen dat ene moment als uitgangspunt. We werken met de spanning die erbij hoort, en met hoe je het moment w&#233;l wilt beleven. Zodat je er rustiger in kunt staan."),
-    ("herinnering-met-spanning", "Een herinnering die nog steeds spanning geeft",
-     "Het is lang geleden. Je weet dat het voorbij is. En toch voel je het nog als je eraan denkt.",
-     ["Een herinnering komt steeds terug, ook als je dat niet wilt", "Je voelt de spanning weer als je eraan denkt", "Je vermijdt plekken, mensen of onderwerpen die eraan raken", "Je wilt het een plek geven, zonder er steeds over te hoeven praten"],
-     "We werken met het alarm dat nog aan die herinnering vastzit. Je hoeft er niet alles over te vertellen. Het doel: dat je eraan kunt denken zonder dat je lijf meteen alarm slaat."),
     ("vastlopen-op-je-doel", "Vastlopen op weg naar je doel",
-     "Je weet wat je wilt. Je hebt een plan. En toch kom je steeds niet in beweging, of je haakt halverwege af.",
+     "Je weet wat je wilt. Je hebt een plan. En toch kom je niet in beweging, of je haakt halverwege af.",
      ["Je stelt uit wat je echt belangrijk vindt", "Je begint vol energie en stopt halverwege", "Een stemmetje zegt dat het toch niks wordt", "Je ziet anderen doen wat jij ook wilt"],
      "We kijken naar het moment waarop je vastloopt. Wat gaat er dan aan, en waartegen beschermt het je? Daar werken we mee. En we versterken hoe het voelt om w&#233;l in beweging te komen."),
+    ("keuze-die-je-niet-durft", "Een keuze die je niet durft te maken",
+     "Je weet eigenlijk wel wat je wilt. Maar de stap zetten lukt niet.",
+     ["Je blijft wikken en wegen", "Je wacht op het perfecte moment", "Je bent bang voor wat er gebeurt als je kiest", "Je voelt dat het tijd is, en toch doe je het niet"],
+     "We werken met wat je tegenhoudt op het moment dat je wilt kiezen. En we versterken hoe het voelt om de stap w&#233;l te zetten. Zodat je kunt kiezen vanuit wat jij wilt."),
+    ("herinnering-die-je-tegenhoudt", "Een herinnering die je tegenhoudt",
+     "Je wilt iets bereiken. Maar een oude ervaring zit je in de weg, telkens als je er dichtbij komt.",
+     ["Een oude ervaring komt terug zodra je een stap zet", "Je voelt de spanning weer als je eraan denkt", "Je vermijdt situaties die eraan raken, ook als je ze nodig hebt voor je doel", "Je wilt verder, zonder dat dit je steeds tegenhoudt"],
+     "We werken met het alarm dat nog aan die herinnering vastzit. Je hoeft er niet alles over te vertellen. Het doel: dat je er weer aan kunt denken, en aan je doel kunt werken, zonder dat je lijf meteen alarm slaat."),
     ("verlangen-en-zingeving", "Verlangen en zingeving",
      "Er is iets wat je wilt, maar je weet niet precies wat. Of je weet het wel, en het voelt nog ver weg.",
      ["Je voelt een verlangen naar meer, zonder dat je het kunt benoemen", "Je leven loopt, maar het raakt je niet echt", "Je zoekt richting voor de komende jaren", "Je wilt dichter bij wat jij echt belangrijk vindt"],
@@ -193,13 +193,13 @@ def drie_sessies():
     return f'''<section class="sec white"><div class="wn">
 <p class="kick">Zo verlopen de 3 sessies</p>
 <h2 class="h2">Drie keer 1,5 uur, online</h2>
-{sessie(1, "Je thema helder", "Waar loop je tegenaan, en hoe wil je het w&#233;l? We kiezen waar we mee werken en beginnen meteen.")}
-{sessie(2, "Werken met Havening en hypnose", "We werken met de spanning die bij je thema hoort, en versterken wat je w&#233;l wilt.")}
+{sessie(1, "Je doel en je blokkade helder", "Wat wil je bereiken, en wat zit in de weg? We kiezen waar we mee werken en beginnen meteen.")}
+{sessie(2, "Werken met Havening en hypnose", "We werken met de spanning die bij je blokkade hoort, en versterken wat je w&#233;l wilt.")}
 {sessie(3, "Verankeren", "Wat merk je in je dagelijks leven? We werken verder waar dat nodig is, en sluiten af met wat je zelf kunt doen.")}
 <div style="border-top:1px solid #E3D3BF"></div>
 </div></section>'''
 
-IND_VERSCHIL = 'De 3 sessies zijn voor &#233;&#233;n duidelijk thema. In het <a href="Individueel.dc.html">individuele programma</a> werk je in 8 sessies met de volledige ROOTS-stappen aan een patroon.'
+IND_VERSCHIL = 'De 3 sessies zijn voor &#233;&#233;n doel of &#233;&#233;n blokkade. Komt hetzelfde steeds terug, in verschillende situaties? Dan is het een patroon. Daarvoor is het <a href="Individueel.dc.html">individuele programma</a>: 8 sessies met de volledige ROOTS-stappen.'
 
 HAV_FAQ = f'''<section class="sec"><div class="wn">
 <p class="kick">Vragen</p>
@@ -207,7 +207,7 @@ HAV_FAQ = f'''<section class="sec"><div class="wn">
 {faq("Werkt Havening ook online?", "Ja. Je doet de aanraking zelf, ik begeleid je. Je hebt alleen een rustige plek en een laptop of tablet met camera nodig.")}
 {faq("Moet ik alles vertellen?", "Nee. Je vertelt wat jij wilt vertellen. Voor Havening is het niet nodig om alles uit te leggen.")}
 {faq("Wat is het verschil met het individuele programma?", IND_VERSCHIL)}
-{faq("Weet je niet welk thema bij je past?", "Plan een gratis kennismaking van 20 minuten. Dan kijken we samen.")}
+{faq("Weet je niet wat bij je past?", "Plan een gratis kennismaking van 20 minuten. Dan kijken we samen.")}
 <div style="border-top:1px solid #E3D3BF"></div>
 </div></section>'''
 
@@ -227,16 +227,43 @@ def themacard(slug, titel, sub):
 
 HAVENING = header("prog") + hero(
     "Havening &amp; hypnose &#183; 3 sessies",
-    'E&#233;n thema. Drie sessies. <span class="cam">Zodat het je niet meer automatisch overneemt.</span>',
-    ["Soms wil je niet een heel programma. Je hebt &#233;&#233;n ding dat steeds terugkomt, &#233;&#233;n moment dat spanning geeft, of &#233;&#233;n doel waar je op vastloopt.",
-     "In drie online sessies werken we daar gericht aan, met Havening en hypnose."],
+    'E&#233;n doel. E&#233;n blokkade. <span class="cam">Drie sessies om hem weg te werken.</span>',
+    ["Je hebt een doel. En er zit iets in de weg: spanning bij een belangrijk moment, uitstel, of een keuze die je niet durft te maken.",
+     "In drie online sessies werken we gericht aan die ene blokkade, met Havening en hypnose."],
     HAV_OFFER) + f'''
+<section class="sec white"><div class="wn">
+<p class="kick">Je kent dit</p>
+<h2 class="h2">Je weet wat je wilt. En precies op het moment dat het erop aankomt, gaat het mis.</h2>
+<p class="p">De presentatie waar je al weken tegenop ziet. Het plan dat al maanden klaarligt. De keuze die je steeds weer uitstelt. Je hebt het doel helder voor ogen. En toch: je lijf zet zich schrap, je hoofd wordt leeg, of je vindt ineens iets anders dat eerst moet.</p>
+<p class="p">Je hebt het al geprobeerd met wilskracht, met plannen, met jezelf toespreken. Het helpt even. Tot het moment zelf.</p>
+<p class="lead cam" style="font-weight:500;margin-top:30px">Dat ligt niet aan je discipline. Er gaat een alarm af dat sneller is dan je wil.</p>
+</div></section>
+
+<section class="sec"><div class="w"><div class="row top" style="gap:72px">
+<div class="c1">
+<p class="kick">Waarom het niet lukt met wilskracht</p>
+<h2 class="h2">Je lijf beschermt je. Alleen op een moment dat je die bescherming niet nodig hebt.</h2>
+<p class="p">Ergens heeft je systeem ooit geleerd dat dit soort momenten spannend is. Dat zit niet in je hoofd, maar in je lijf. Daarom kun je het niet wegdenken.</p>
+<p class="p">Met Havening en hypnose werken we op die laag. Niet door je eroverheen te zetten, maar door te werken met het alarm zelf, en met hoe je het w&#233;l wilt.</p>
+</div>
+<div class="c1">
+<div class="cardS" style="background:#FFFFFF">
+<p class="cap">Wat je ervoor terugkrijgt</p>
+<ul class="list" style="margin:0">
+<li style="font-size:16px">{CHECK}<span>Rust op het moment dat ertoe doet</span></li>
+<li style="font-size:16px">{CHECK}<span>Weer in beweging richting je doel</span></li>
+<li style="font-size:16px">{CHECK}<span>De keuze maken die je al zo lang wilt maken</span></li>
+</ul>
+</div>
+</div>
+</div></div></section>
+
 <section class="sec white"><div class="w">
 <p class="kick" style="text-align:center">Waar kan ik je mee helpen?</p>
-<h2 class="h2" style="text-align:center">Kies je thema</h2>
+<h2 class="h2" style="text-align:center">Wat zit je in de weg?</h2>
 <div class="grid3" style="margin-top:46px">
 {''.join(themacard(s, t, sub) for s, t, sub, *_ in THEMAS)}
-<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Staat je thema er niet tussen?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Vertel me waar je tegenaan loopt. Dan kijken we samen of dit past.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Plan een gratis kennismaking &#8594;</a></div>
+<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Staat jouw blokkade er niet tussen?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Vertel me waar je tegenaan loopt. Dan kijken we samen of dit past.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Plan een gratis kennismaking &#8594;</a></div>
 </div>
 </div></section>
 <section class="sec"><div class="wn">
@@ -245,15 +272,40 @@ HAVENING = header("prog") + hero(
 <p class="p">Ik werk al jaren met allebei. Samen zijn ze sterk: Havening werkt met het alarm dat aan een moment of herinnering vastzit, hypnose versterkt hoe je het w&#233;l wilt.</p>
 {HAV_UITLEG}
 </div></section>
+<section class="sec white"><div class="wn"><div class="cardS" style="background:#FAF1E8;border:1px solid #BD9D60">
+<p class="cap">Doel of patroon?</p>
+<p class="p" style="margin:0 0 10px">Gaat het om &#233;&#233;n doel of &#233;&#233;n moment? Dan zijn deze 3 sessies voor jou.</p>
+<p class="p" style="margin:0">Komt hetzelfde steeds terug, in verschillende situaties? Dan is het een patroon. Kijk dan naar het <a href="Individueel.dc.html">individuele programma</a>.</p>
+</div></div></section>
 {drie_sessies()}
+<section class="sec"><div class="w"><div class="row" style="gap:72px">
+<div style="flex:0 0 360px" class="photo"><img src="{PORTRAIT}" alt="Portret Trude Kuin"></div>
+<div class="c1">
+<p class="kick">Met wie werk je?</p>
+<h2 class="h2">Ik ben Trude.</h2>
+<p class="p">Ik ben hypnotherapeut en Havening practitioner, en begeleid sinds 1988 mensen bij persoonlijke verandering. In deze drie sessies zet ik dat in voor jouw doel.</p>
+<a class="btn2" href="Over.dc.html">Meer over mij &#8594;</a>
+</div>
+</div></div></section>
+<section class="sec white"><div class="w"><div class="grid2" style="gap:56px">
+<div><h3 class="h3">Voor jou als</h3><ul class="list">
+<li>{CHECK}<span>je een concreet doel hebt, en er iets in de weg zit</span></li>
+<li>{CHECK}<span>je gericht aan &#233;&#233;n blokkade wilt werken</span></li>
+<li>{CHECK}<span>je in korte tijd verschil wilt merken</span></li>
+</ul></div>
+<div><h3 class="h3">Niet voor jou als</h3><ul class="list">
+<li>{DASH}<span>hetzelfde patroon steeds terugkomt, in allerlei situaties. Kijk dan naar het <a href="Individueel.dc.html">individuele programma</a>.</span></li>
+<li>{DASH}<span>je vooral meer inzicht zoekt. Dit gaat over doen.</span></li>
+</ul></div>
+</div></div></section>
 {HAV_FAQ}
-''' + slot_band("Klaar om aan je thema te werken?") + footer()
+''' + slot_band("Klaar om je blokkade weg te werken?") + footer()
 
 def thema_page(slug, titel, sub, herken, aanpak):
     li = ''.join(f'<li>{CHECK}<span>{t}</span></li>' for t in herken)
     return header("prog") + hero(
-        "Havening &amp; hypnose &#183; thema", titel, [sub],
-        HAV_OFFER, '<a class="btn2" href="Havening.dc.html">&#8592; Alle thema&#8217;s</a>') + f'''
+        "Havening &amp; hypnose &#183; doel of blokkade", titel, [sub],
+        HAV_OFFER, '<a class="btn2" href="Havening.dc.html">&#8592; Alle onderwerpen</a>') + f'''
 <section class="sec white"><div class="w"><div class="row top" style="gap:72px">
 <div class="c1"><p class="kick">Herken je dit?</p><h2 class="h2">{titel}</h2><ul class="list">{li}</ul></div>
 <div class="c1"><p class="kick">Wat we doen</p><h2 class="h2">Zo werken we eraan</h2><p class="p">{aanpak}</p></div>

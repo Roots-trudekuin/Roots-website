@@ -28,8 +28,8 @@ def offer(cap, title, items, prijs, prijs_sub, btn_label, btn_href):
 IND_OFFER = offer("Individual programme", "Your pattern, one to one with me",
                   ["8 online sessions with me", "Your own pattern is what we work with", "The same steps as the Challenge, at your pace"],
                   PRIJS_IND, "For the full programme of 8 sessions", "Yes, I want to start", PAY_IND)
-HAV_OFFER = offer("Havening &amp; hypnosis", "3 sessions for one theme",
-                  ["3 online sessions of 1.5 hours", "One theme of your choice", "Havening and hypnosis combined"],
+HAV_OFFER = offer("Havening &amp; hypnosis", "3 sessions for one goal",
+                  ["3 online sessions of 1.5 hours", "One goal or block of your choice", "Havening and hypnosis combined"],
                   PRIJS_HAV, "For 3 sessions together", "Book 3 sessions", PAY_HAV)
 
 
@@ -56,7 +56,7 @@ EN_PROGRAMMES = header_en("prog") + hero_en(
 <div class="grid3" style="margin-top:46px">
 {progcard("One to one &#183; 8 sessions", "Individual programme", "You work with one of your own patterns, together with me. The same steps as the Challenge, fully tailored to you and at your pace. Online.", "EN-Individual.dc.html", "View the programme", f'<p class="ps" style="margin-bottom:20px;font-weight:600">{PRIJS_IND} &#183; 8 online sessions</p>')}
 {progcard("In a group &#183; 7 days", "Trigger Breakfree Challenge", "Seven days, one pattern of your own. A short video and one thing to do every day, with the community around you. I&#8217;m there with you.", "EN-Challenge.dc.html", "View the Challenge", '<p class="ps" style="margin-bottom:20px;font-weight:600">Coming soon in English</p>')}
-{progcard("Short track &#183; 3 sessions", "Havening &amp; hypnosis", "For one clear theme: a reaction that keeps coming back, tension around a particular moment, or a goal you keep getting stuck on.", "EN-Havening.dc.html", "View the themes", f'<p class="ps" style="margin-bottom:20px;font-weight:600">{PRIJS_HAV} &#183; 3 online sessions of 1.5 hours</p>')}
+{progcard("Short track &#183; 3 sessions", "Havening &amp; hypnosis", "For one goal or block: tension around an important moment, getting stuck on the way to your goal, or a choice you don&#8217;t dare to make.", "EN-Havening.dc.html", "View the themes", f'<p class="ps" style="margin-bottom:20px;font-weight:600">{PRIJS_HAV} &#183; 3 online sessions of 1.5 hours</p>')}
 </div>
 </div></section>
 <section class="sec"><div class="wn" style="text-align:center">
@@ -158,22 +158,22 @@ EN_INDIVIDUAL = header_en("prog") + hero_en(
 ''' + footer_en()
 
 THEMES = [
-    ("recurring-reaction", "A reaction that keeps coming back",
-     "You know how you want to react. And still that one reaction takes over every time.",
-     ["You snap, when you wanted to stay calm", "You say yes, when you mean no", "You shut down in a conversation that matters", "Afterwards you think: I did it <em>again</em>"],
-     "We choose one reaction that keeps coming back. We look at the moment it switches on, and work with what happens in your body then. The aim: that this reaction no longer switches on automatically, so you can choose for yourself."),
     ("tension-around-a-moment", "Tension around a specific moment",
-     "A presentation, a difficult conversation, an appointment coming up. Your body braces itself before it even happens.",
-     ["You sleep badly before an important conversation", "Your body tenses as soon as you think about it", "You put things off because the moment feels so heavy", "You want to do it well, and that is exactly why it works less well"],
+     "A presentation, an exam, an important conversation. Your body braces itself before it even happens.",
+     ["You sleep badly before an important moment", "Your body tenses as soon as you think about it", "You put it off because it feels so heavy", "You want to do it well, and that is exactly why it works less well"],
      "We take that one moment as our starting point. We work with the tension that belongs to it, and with how you <em>do</em> want to experience the moment. So you can stand in it more calmly."),
-    ("memory-that-still-carries-tension", "A memory that still carries tension",
-     "It was a long time ago. You know it is over. And still you feel it when you think about it.",
-     ["A memory keeps coming back, even when you don&#8217;t want it to", "You feel the tension again when you think about it", "You avoid places, people or subjects that touch on it", "You want to give it a place, without having to talk about it again and again"],
-     "We work with the alarm still attached to that memory. You don&#8217;t have to tell me everything about it. The aim: that you can think about it without your body sounding the alarm straight away."),
     ("stuck-on-your-goal", "Getting stuck on the way to your goal",
      "You know what you want. You have a plan. And still you don&#8217;t get moving, or you drop out halfway.",
      ["You postpone what really matters to you", "You start full of energy and stop halfway", "A little voice says it won&#8217;t work anyway", "You see others doing what you want to do too"],
      "We look at the moment you get stuck. What switches on then, and what does it protect you from? That is what we work with. And we strengthen how it feels to <em>get</em> moving."),
+    ("a-choice-you-dare-not-make", "A choice you don&#8217;t dare to make",
+     "Deep down you know what you want. But taking the step doesn&#8217;t happen.",
+     ["You keep weighing things up", "You wait for the perfect moment", "You are afraid of what happens once you choose", "You feel it is time, and still you don&#8217;t do it"],
+     "We work with what holds you back at the moment you want to choose. And we strengthen how it feels to <em>take</em> the step. So you can choose from what you want."),
+    ("a-memory-that-holds-you-back", "A memory that holds you back",
+     "You want to achieve something. But an old experience gets in the way, every time you come close.",
+     ["An old experience comes back as soon as you take a step", "You feel the tension again when you think about it", "You avoid situations that touch on it, even when you need them for your goal", "You want to move on, without this holding you back every time"],
+     "We work with the alarm still attached to that memory. You don&#8217;t have to tell me everything about it. The aim: that you can think about it again, and work on your goal, without your body sounding the alarm straight away."),
     ("longing-and-meaning", "Longing and meaning",
      "There is something you want, but you don&#8217;t quite know what. Or you do know, and it still feels far away.",
      ["You feel a longing for more, without being able to name it", "Your life runs, but it doesn&#8217;t really touch you", "You are looking for direction for the coming years", "You want to be closer to what really matters to you"],
@@ -195,14 +195,14 @@ def three_sessions():
     return f'''<section class="sec white"><div class="wn">
 <p class="kick">How the 3 sessions work</p>
 <h2 class="h2">Three times 1.5 hours, online</h2>
-{sessie(1, "Your theme made clear", "What do you run into, and how <em>do</em> you want it? We choose what we work with and begin straight away.")}
-{sessie(2, "Working with Havening and hypnosis", "We work with the tension that belongs to your theme, and strengthen what you <em>do</em> want.")}
+{sessie(1, "Your goal and your block made clear", "What do you want to achieve, and what is in the way? We choose what we work with and begin straight away.")}
+{sessie(2, "Working with Havening and hypnosis", "We work with the tension that belongs to your block, and strengthen what you <em>do</em> want.")}
 {sessie(3, "Anchoring", "What do you notice in daily life? We continue where needed, and close with what you can do yourself.")}
 <div style="border-top:1px solid #E3D3BF"></div>
 </div></section>'''
 
 
-IND_DIFF = 'The 3 sessions are for one clear theme. In the <a href="EN-Individual.dc.html">individual programme</a> you work on a pattern over 8 sessions, using the full ROOTS steps.'
+IND_DIFF = 'The 3 sessions are for one goal or one block. Does the same thing keep coming back, in different situations? Then it is a pattern. That is what the <a href="EN-Individual.dc.html">individual programme</a> is for: 8 sessions using the full ROOTS steps.'
 
 HAV_FAQ = f'''<section class="sec"><div class="wn">
 <p class="kick">Questions</p>
@@ -210,7 +210,7 @@ HAV_FAQ = f'''<section class="sec"><div class="wn">
 {faq("Does Havening work online?", "Yes. You do the touch yourself, and I guide you. All you need is a quiet place and a laptop or tablet with a camera.")}
 {faq("Do I have to tell you everything?", "No. You tell me what you want to tell me. For Havening it is not necessary to explain everything.")}
 {faq("What is the difference with the individual programme?", IND_DIFF)}
-{faq("Not sure which theme fits you?", "Book a free 20-minute introductory call. We&#8217;ll look at it together.")}
+{faq("Not sure what fits you?", "Book a free 20-minute introductory call. We&#8217;ll look at it together.")}
 <div style="border-top:1px solid #E3D3BF"></div>
 </div></section>'''
 
@@ -233,16 +233,43 @@ def themecard(slug, title, sub):
 
 EN_HAVENING = header_en("prog") + hero_en(
     "Havening &amp; hypnosis &#183; 3 sessions",
-    'One theme. Three sessions. <span class="cam">So it no longer takes over automatically.</span>',
-    ["Sometimes you don&#8217;t want a whole programme. You have one thing that keeps coming back, one moment that brings tension, or one goal you keep getting stuck on.",
-     "In three online sessions we work on that in a focused way, with Havening and hypnosis."],
+    'One goal. One block. <span class="cam">Three sessions to clear it.</span>',
+    ["You have a goal. And something is in the way: tension around an important moment, putting things off, or a choice you don&#8217;t dare to make.",
+     "In three online sessions we work on that one block in a focused way, with Havening and hypnosis."],
     HAV_OFFER) + f'''
+<section class="sec white"><div class="wn">
+<p class="kick">You know this</p>
+<h2 class="h2">You know what you want. And right when it matters, it goes wrong.</h2>
+<p class="p">The presentation you have been dreading for weeks. The plan that has been ready for months. The choice you keep putting off. Your goal is clear. And still: your body braces itself, your mind goes blank, or suddenly there is something else that needs doing first.</p>
+<p class="p">You have tried willpower, planning, giving yourself a talking-to. It helps for a while. Until the moment itself.</p>
+<p class="lead cam" style="font-weight:500;margin-top:30px">That is not about your discipline. An alarm goes off that is faster than your will.</p>
+</div></section>
+
+<section class="sec"><div class="w"><div class="row top" style="gap:72px">
+<div class="c1">
+<p class="kick">Why willpower doesn&#8217;t work</p>
+<h2 class="h2">Your body protects you. Just at a moment when you don&#8217;t need that protection.</h2>
+<p class="p">At some point your system learned that moments like this are dangerous. That isn&#8217;t in your head, it is in your body. That is why you can&#8217;t think it away.</p>
+<p class="p">With Havening and hypnosis we work on that layer. Not by pushing past it, but by working with the alarm itself, and with how you <em>do</em> want it.</p>
+</div>
+<div class="c1">
+<div class="cardS" style="background:#FFFFFF">
+<p class="cap">What you get back</p>
+<ul class="list" style="margin:0">
+<li style="font-size:16px">{CHECK}<span>Calm at the moment that matters</span></li>
+<li style="font-size:16px">{CHECK}<span>Moving towards your goal again</span></li>
+<li style="font-size:16px">{CHECK}<span>Making the choice you have wanted to make for so long</span></li>
+</ul>
+</div>
+</div>
+</div></div></section>
+
 <section class="sec white"><div class="w">
 <p class="kick" style="text-align:center">What can I help you with?</p>
-<h2 class="h2" style="text-align:center">Choose your theme</h2>
+<h2 class="h2" style="text-align:center">What is in your way?</h2>
 <div class="grid3" style="margin-top:46px">
 {''.join(themecard(s, t, sub) for s, t, sub, *_ in THEMES)}
-<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Is your theme not listed?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Tell me what you run into. Then we&#8217;ll see together whether this fits.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Book a free introductory call &#8594;</a></div>
+<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Is your block not listed?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Tell me what you run into. Then we&#8217;ll see together whether this fits.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Book a free introductory call &#8594;</a></div>
 </div>
 </div></section>
 <section class="sec"><div class="wn">
@@ -251,16 +278,41 @@ EN_HAVENING = header_en("prog") + hero_en(
 <p class="p">I have worked with both for years. Together they are strong: Havening works with the alarm attached to a moment or memory, hypnosis strengthens how you <em>do</em> want it.</p>
 {HAV_EXPLAIN}
 </div></section>
+<section class="sec white"><div class="wn"><div class="cardS" style="background:#FAF1E8;border:1px solid #BD9D60">
+<p class="cap">Goal or pattern?</p>
+<p class="p" style="margin:0 0 10px">Is it about one goal or one moment? Then these 3 sessions are for you.</p>
+<p class="p" style="margin:0">Does the same thing keep coming back, in different situations? Then it is a pattern. Have a look at the <a href="EN-Individual.dc.html">individual programme</a>.</p>
+</div></div></section>
 {three_sessions()}
+<section class="sec"><div class="w"><div class="row" style="gap:72px">
+<div style="flex:0 0 360px" class="photo"><img src="{PORTRAIT}" alt="Portrait of Trude Kuin"></div>
+<div class="c1">
+<p class="kick">Who will you work with?</p>
+<h2 class="h2">I&#8217;m Trude.</h2>
+<p class="p">I am a hypnotherapist and Havening practitioner, and I have guided people through personal change since 1988. In these three sessions I use that for your goal.</p>
+<a class="btn2" href="EN-About.dc.html">More about me &#8594;</a>
+</div>
+</div></div></section>
+<section class="sec white"><div class="w"><div class="grid2" style="gap:56px">
+<div><h3 class="h3">For you if</h3><ul class="list">
+<li>{CHECK}<span>you have a concrete goal, and something is in the way</span></li>
+<li>{CHECK}<span>you want to work on one block in a focused way</span></li>
+<li>{CHECK}<span>you want to notice a difference in a short time</span></li>
+</ul></div>
+<div><h3 class="h3">Not for you if</h3><ul class="list">
+<li>{DASH}<span>the same pattern keeps coming back, in all kinds of situations. Then look at the <a href="EN-Individual.dc.html">individual programme</a>.</span></li>
+<li>{DASH}<span>you are mainly looking for more insight. This is about doing.</span></li>
+</ul></div>
+</div></div></section>
 {HAV_FAQ}
-''' + close_band("Ready to work on your theme?") + footer_en()
+''' + close_band("Ready to clear your block?") + footer_en()
 
 
 def theme_page(slug, title, sub, recog, approach):
     li = ''.join(f'<li>{CHECK}<span>{t}</span></li>' for t in recog)
     return header_en("prog") + hero_en(
-        "Havening &amp; hypnosis &#183; theme", title, [sub],
-        HAV_OFFER, '<a class="btn2" href="EN-Havening.dc.html">&#8592; All themes</a>') + f'''
+        "Havening &amp; hypnosis &#183; goal or block", title, [sub],
+        HAV_OFFER, '<a class="btn2" href="EN-Havening.dc.html">&#8592; All topics</a>') + f'''
 <section class="sec white"><div class="w"><div class="row top" style="gap:72px">
 <div class="c1"><p class="kick">Do you recognise this?</p><h2 class="h2">{title}</h2><ul class="list">{li}</ul></div>
 <div class="c1"><p class="kick">What we do</p><h2 class="h2">How we work on it</h2><p class="p">{approach}</p></div>
