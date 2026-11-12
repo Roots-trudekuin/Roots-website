@@ -174,7 +174,7 @@ THEMAS = [
     ("leefstijl-en-gewoontes", "Leefstijl en gewoontes veranderen",
      "Je weet wat goed voor je is. Gezonder eten, meer bewegen, eerder naar bed, minder op je scherm. En toch val je steeds terug in je oude gewoonte.",
      ["Je begint elke maandag opnieuw", "Op het moment zelf wint de oude gewoonte het", "Je weet precies wat je zou moeten doen, alleen het lukt niet", "Je wilt het niet langer met discipline hoeven doen"],
-     "We kijken naar het moment waarop de oude gewoonte het overneemt. Wat gaat er dan aan, en wat levert die gewoonte je op dat moment op? Daar werken we mee. En we versterken de nieuwe gewoonte, zodat die vanzelfsprekender wordt."),
+     "We kijken naar het moment waarop de oude gewoonte het overneemt, en naar wat je onbewuste nodig heeft om de oude gewoonte los te laten en de nieuwe te versterken."),
     ("herinnering-die-je-tegenhoudt", "Een herinnering die je tegenhoudt",
      "Je wilt iets bereiken. Maar een oude ervaring zit je in de weg, telkens als je er dichtbij komt.",
      ["Een oude ervaring komt terug zodra je een stap zet", "Je voelt de spanning weer als je eraan denkt", "Je vermijdt situaties die eraan raken, ook als je ze nodig hebt voor je doel", "Je wilt verder, zonder dat dit je steeds tegenhoudt"],

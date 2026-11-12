@@ -173,7 +173,7 @@ THEMES = [
     ("lifestyle-and-habits", "Changing lifestyle and habits",
      "You know what is good for you. Eating healthier, moving more, going to bed earlier, less screen time. And still you keep falling back into your old habit.",
      ["You start again every Monday", "In the moment itself, the old habit wins", "You know exactly what you should do, it just doesn&#8217;t happen", "You no longer want to have to do it on discipline"],
-     "We look at the moment the old habit takes over. What switches on then, and what does that habit give you in that moment? That is what we work with. And we strengthen the new habit, so it becomes more natural."),
+     "We look at the moment the old habit takes over, and at what your unconscious needs to let go of the old habit and strengthen the new one."),
     ("a-memory-that-holds-you-back", "A memory that holds you back",
      "You want to achieve something. But an old experience gets in the way, every time you come close.",
      ["An old experience comes back as soon as you take a step", "You feel the tension again when you think about it", "You avoid situations that touch on it, even when you need them for your goal", "You want to move on, without this holding you back every time"],
