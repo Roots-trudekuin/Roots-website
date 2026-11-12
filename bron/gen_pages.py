@@ -170,7 +170,7 @@ CONTACT = header("contact") + f'''
 <p class="lead">Een vraag, een idee, of alleen een gevoel dat het tijd is voor iets anders? Vertel het me. Het hoeft nog niet helemaal helder te zijn. Ik lees alles zelf.</p>
 <div style="display:flex;flex-direction:column;gap:14px;margin:34px 0 0;max-width:420px">
 <a class="btn" href="WA-DIRECT">App me via WhatsApp</a>
-<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Plan een gratis kennismaking van 20 minuten &#8594;</a>
+<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Gratis kennismaking (20 min) &#8594;</a>
 </div>
 <p class="kick" style="margin-top:64px">Wat gebeurt er daarna?</p>
 <div style="display:flex;flex-direction:column;gap:22px">

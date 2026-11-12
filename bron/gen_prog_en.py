@@ -7,7 +7,7 @@ PAY_IND, PAY_HAV, BOOK = "PAY-IND", "PAY-HAV", "BOOK-KM"
 PRIJS_IND, PRIJS_HAV = "&#8364;1,335", "&#8364;500"
 
 
-def intro_call(label="Book a free consultation (20 min)"):
+def intro_call(label="Free consultation (20 min)"):
     return f'<a class="btn2" href="{BOOK}">{label} &#8594;</a>'
 
 
@@ -20,7 +20,7 @@ def offer(cap, title, items, prijs, prijs_sub, btn_label, btn_href):
 <p style="font-size:34px;font-weight:300;margin:0;color:#333333">{prijs}</p>
 <p class="ps" style="font-size:14px;margin:4px 0 0">{prijs_sub}</p>
 <a class="btn" href="{btn_href}" style="display:block;margin-top:22px">{btn_label}</a>
-<p class="ps" style="text-align:center;margin-top:16px">{intro_call("Book a free consultation (20 min)")}</p>
+<p class="ps" style="text-align:center;margin-top:16px">{intro_call("Free consultation (20 min)")}</p>
 <p class="ps" style="text-align:center;margin-top:12px"><a class="btn2" href="EN-Contact.dc.html">Rather ask a question first? Get in touch &#8594;</a></p>
 </div>'''
 
@@ -63,7 +63,7 @@ EN_PROGRAMMES = header_en("prog") + hero_en(
 <p class="kick">Not sure what suits you?</p>
 <h2 class="h2">Let&#8217;s talk for 20 minutes.</h2>
 <p class="p">You tell me what you run into. I&#8217;ll tell you honestly which programme fits, or that none of them does. Free and online.</p>
-<div style="display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap"><a class="btn" href="{BOOK}">Book a free consultation (20 min)</a><a class="btn2" href="EN-Contact.dc.html">Or get in touch &#8594;</a></div>
+<div style="display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap"><a class="btn" href="{BOOK}">Free consultation (20 min)</a><a class="btn2" href="EN-Contact.dc.html">Or get in touch &#8594;</a></div>
 </div></section>
 ''' + footer_en()
 
@@ -151,7 +151,7 @@ EN_INDIVIDUAL = header_en("prog") + hero_en(
 <h2 class="h2">Ready to begin?</h2>
 <p class="lead">Eight online sessions with me, on your pattern. {PRIJS_IND} for the full programme.</p>
 <a class="btn" href="{PAY_IND}" style="background:#FFFFFF;color:#333333">Yes, I want to start</a>
-<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Or book a free consultation (20 min) first &#8594;</a></p>
+<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Free consultation (20 min) &#8594;</a></p>
 <p class="lead" style="margin-top:36px">And you are going to make it!</p>
 <p class="lead" style="font-weight:500">Love, Trude</p>
 </div></section>
@@ -224,7 +224,7 @@ def close_band(title):
 <h2 class="h2">{title}</h2>
 <p class="lead">3 online sessions of 1.5 hours. {PRIJS_HAV} together.</p>
 <a class="btn" href="{PAY_HAV}" style="background:#FFFFFF;color:#333333">Book 3 sessions</a>
-<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Or book a free consultation (20 min) first &#8594;</a></p>
+<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Free consultation (20 min) &#8594;</a></p>
 <p class="lead" style="margin-top:36px;font-weight:500">Love, Trude</p>
 </div></section>'''
 
@@ -273,7 +273,7 @@ EN_HAVENING = header_en("prog") + hero_en(
 <h2 class="h2" style="text-align:center">What is in your way?</h2>
 <div class="grid3" style="margin-top:46px">
 {''.join(themecard(s, t, sub) for s, t, sub, *_ in THEMES)}
-<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Is your block not listed?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Tell me what you run into. Then we&#8217;ll see together whether this fits.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Book a free consultation (20 min) &#8594;</a></div>
+<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Is your block not listed?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Tell me what you run into. Then we&#8217;ll see together whether this fits.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Free consultation (20 min) &#8594;</a></div>
 </div>
 </div></section>
 <section class="sec"><div class="wn">
@@ -339,7 +339,7 @@ EN_CONTACT2 = header_en("contact") + f'''
 <p class="lead">A question, an idea, or just a feeling that it&#8217;s time for something different? Tell me. It doesn&#8217;t have to be completely clear yet. I read everything myself.</p>
 <div style="display:flex;flex-direction:column;gap:14px;margin:34px 0 0;max-width:420px">
 <a class="btn" href="WA-DIRECT">Message me on WhatsApp</a>
-<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Book a free consultation (20 min) &#8594;</a>
+<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Free consultation (20 min) &#8594;</a>
 </div>
 <p class="kick" style="margin-top:64px">What happens next?</p>
 <div style="display:flex;flex-direction:column;gap:22px">

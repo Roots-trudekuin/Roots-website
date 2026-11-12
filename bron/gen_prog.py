@@ -9,7 +9,7 @@ BOOK = "BOOK-KM"         # boekingspagina gratis kennismaking 20 min
 PRIJS_IND = "&#8364;1.335"
 PRIJS_HAV = "&#8364;500"
 
-def kennismaking(label="Plan een gratis kennismaking van 20 minuten"):
+def kennismaking(label="Gratis kennismaking (20 min)"):
     return f'<a class="btn2" href="{BOOK}">{label} &#8594;</a>'
 
 def offer(cap, title, items, prijs, prijs_sub, btn_label, btn_href):
@@ -21,7 +21,7 @@ def offer(cap, title, items, prijs, prijs_sub, btn_label, btn_href):
 <p style="font-size:34px;font-weight:300;margin:0;color:#333333">{prijs}</p>
 <p class="ps" style="font-size:14px;margin:4px 0 0">{prijs_sub}</p>
 <a class="btn" href="{btn_href}" style="display:block;margin-top:22px">{btn_label}</a>
-<p class="ps" style="text-align:center;margin-top:16px">{kennismaking("Eerst kennismaken? Plan 20 minuten gratis")}</p>
+<p class="ps" style="text-align:center;margin-top:16px">{kennismaking("Gratis kennismaking (20 min)")}</p>
 <p class="ps" style="text-align:center;margin-top:12px"><a class="btn2" href="Contact.dc.html">Liever eerst een vraag? Laten we praten &#8594;</a></p>
 </div>'''
 
@@ -62,7 +62,7 @@ PROGRAMMAS = header("prog") + hero(
 <p class="kick">Twijfel je wat bij je past?</p>
 <h2 class="h2">Laten we 20 minuten praten.</h2>
 <p class="p">Je vertelt waar je tegenaan loopt. Ik vertel eerlijk welk programma daarbij past, of dat geen van allemaal past. Gratis en online.</p>
-<div style="display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap"><a class="btn" href="{BOOK}">Plan een gratis kennismaking</a><a class="btn2" href="Contact.dc.html">Of laten we praten &#8594;</a></div>
+<div style="display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap"><a class="btn" href="{BOOK}">Gratis kennismaking (20 min)</a><a class="btn2" href="Contact.dc.html">Of laten we praten &#8594;</a></div>
 </div></section>
 ''' + footer()
 
@@ -151,7 +151,7 @@ INDIVIDUEEL = header("prog") + hero(
 <h2 class="h2">Klaar om te beginnen?</h2>
 <p class="lead">Acht online sessies met mij, op jouw patroon. {PRIJS_IND} voor het hele programma.</p>
 <a class="btn" href="{PAY_IND}" style="background:#FFFFFF;color:#333333">Ja, ik wil starten</a>
-<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Of plan eerst een gratis kennismaking van 20 minuten &#8594;</a></p>
+<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Gratis kennismaking (20 min) &#8594;</a></p>
 <p class="lead" style="margin-top:36px">En het gaat je zeker lukken!</p>
 <p class="lead" style="font-weight:500">Liefs, Trude</p>
 </div></section>
@@ -220,7 +220,7 @@ def slot_band(title):
 <h2 class="h2">{title}</h2>
 <p class="lead">3 online sessies van 1,5 uur. {PRIJS_HAV} samen.</p>
 <a class="btn" href="{PAY_HAV}" style="background:#FFFFFF;color:#333333">Boek 3 sessies</a>
-<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Of plan eerst een gratis kennismaking van 20 minuten &#8594;</a></p>
+<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Gratis kennismaking (20 min) &#8594;</a></p>
 <p class="lead" style="margin-top:36px;font-weight:500">Liefs, Trude</p>
 </div></section>'''
 
@@ -267,7 +267,7 @@ HAVENING = header("prog") + hero(
 <h2 class="h2" style="text-align:center">Wat zit je in de weg?</h2>
 <div class="grid3" style="margin-top:46px">
 {''.join(themacard(s, t, sub) for s, t, sub, *_ in THEMAS)}
-<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Staat jouw blokkade er niet tussen?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Vertel me waar je tegenaan loopt. Dan kijken we samen of dit past.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Plan een gratis kennismaking &#8594;</a></div>
+<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Staat jouw blokkade er niet tussen?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Vertel me waar je tegenaan loopt. Dan kijken we samen of dit past.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Gratis kennismaking (20 min) &#8594;</a></div>
 </div>
 </div></section>
 <section class="sec"><div class="wn">
