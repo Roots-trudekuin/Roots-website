@@ -204,7 +204,7 @@ IND_VERSCHIL = 'De 3 sessies zijn voor &#233;&#233;n doel of &#233;&#233;n blokk
 HAV_FAQ = f'''<section class="sec"><div class="wn">
 <p class="kick">Vragen</p>
 <h2 class="h2">Goed om te weten</h2>
-{faq("Werkt Havening ook online?", "Ja. Je doet de aanraking zelf, ik begeleid je. Je hebt alleen een rustige plek en een laptop of tablet met camera nodig.")}
+{faq("Werkt Havening ook online?", "Ja. Je doet de aanraking zelf, ik begeleid je. Je hebt alleen een rustige plek nodig en een laptop, tablet of telefoon met camera. Met je telefoon in een standaard kun je heel comfortabel gaan zitten of liggen.")}
 {faq("Moet ik alles vertellen?", "Nee. Je vertelt wat jij wilt vertellen. Voor Havening is het niet nodig om alles uit te leggen.")}
 {faq("Wat is het verschil met het individuele programma?", IND_VERSCHIL)}
 {faq("Weet je niet wat bij je past?", "Plan een gratis kennismaking van 20 minuten. Dan kijken we samen.")}

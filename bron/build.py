@@ -155,7 +155,7 @@ def fix(html, lang="nl"):
 
     for a, b in LINKS:
         html = html.replace(f'href="{a}"', f'href="{b}"')
-    mlink = '<a class="mnav" href="/en#handbook">Free handbook</a>' if lang == "en" else '<a class="mnav" href="/#handboek">Gratis handboek</a>'
+    mlink = '<a class="mnav" href="/en#handbook">Pattern Reset Handbook</a>' if lang == "en" else '<a class="mnav" href="/#handboek">Handboek Patroon-Reset</a>'
     html = html.replace('</nav>', mlink + '</nav>', 1)
     html = html.replace('<button class="burger" type="button" aria-label="Menu openen">', '<button class="burger" type="button" aria-label="Menu openen" aria-expanded="false">')
     html = html.replace('<button class="burger" type="button" aria-label="Open menu">', '<button class="burger" type="button" aria-label="Open menu" aria-expanded="false">')

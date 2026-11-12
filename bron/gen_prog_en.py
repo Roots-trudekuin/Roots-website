@@ -207,7 +207,7 @@ IND_DIFF = 'The 3 sessions are for one goal or one block. Does the same thing ke
 HAV_FAQ = f'''<section class="sec"><div class="wn">
 <p class="kick">Questions</p>
 <h2 class="h2">Good to know</h2>
-{faq("Does Havening work online?", "Yes. You do the touch yourself, and I guide you. All you need is a quiet place and a laptop or tablet with a camera.")}
+{faq("Does Havening work online?", "Yes. You do the touch yourself, and I guide you. All you need is a quiet place and a laptop, tablet or phone with a camera. With your phone on a stand, you can sit or lie down really comfortably.")}
 {faq("Do I have to tell you everything?", "No. You tell me what you want to tell me. For Havening it is not necessary to explain everything.")}
 {faq("What is the difference with the individual programme?", IND_DIFF)}
 {faq("Not sure what fits you?", "Book a free 20-minute introductory call. We&#8217;ll look at it together.")}

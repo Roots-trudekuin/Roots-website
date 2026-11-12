@@ -9,7 +9,7 @@ def header_en(active="home"):
     nav = ''.join(f'<a href="{h}"' + (' class="on"' if k == active else '') + f'>{l}</a>' for h, l, k in items)
     return (f'<header class="hdr"><div class="in">{logo}<nav class="nav" aria-label="Main menu">{nav}</nav>'
             f'<div class="lang dsk"><a href="Main.dc.html">NL</a> | <span class="on">EN</span></div>'
-            f'<a class="hbtn dsk" href="EN-Home.dc.html#handbook">Free handbook</a>'
+            f'<a class="hbtn dsk" href="EN-Home.dc.html#handbook">Pattern Reset Handbook</a>'
             f'<button class="burger" type="button" aria-label="Open menu">{BURGER}</button></div></header>')
 
 def header_en_min():
@@ -44,7 +44,7 @@ def wish(t, x): return f'<div class="card" style="padding:36px"><p class="cap">{
 def footer_en():
     return f'''<footer class="ftr"><div class="w"><div class="cols">
 <div style="flex:1 1 260px"><div class="wm">ROOTS</div><p class="ps" style="margin-top:10px;color:#FFFFFF">Switch off your pattern at the source.</p><p class="ps" style="margin-top:22px;color:#FFFFFF">A method by TrudeThecla.</p></div>
-<div><p class="h">Website</p><ul><li><a href="EN-Home.dc.html#handbook">Start here</a></li><li><a href="EN-Programmes.dc.html">Programmes</a></li><li><a href="EN-Challenge.dc.html">Trigger Breakfree Challenge</a></li><li><a href="EN-Insights.dc.html">Insights</a></li><li><a href="EN-Home.dc.html#handbook">Free handbook</a></li><li><a href="EN-About.dc.html">About Trude</a></li></ul></div>
+<div><p class="h">Website</p><ul><li><a href="EN-Home.dc.html#handbook">Start here</a></li><li><a href="EN-Programmes.dc.html">Programmes</a></li><li><a href="EN-Challenge.dc.html">Trigger Breakfree Challenge</a></li><li><a href="EN-Insights.dc.html">Insights</a></li><li><a href="EN-Home.dc.html#handbook">Pattern Reset Handbook</a></li><li><a href="EN-About.dc.html">About Trude</a></li></ul></div>
 <div><p class="h">Contact</p><ul><li><a href="EN-Contact.dc.html">Send a message</a></li><li><a href="#">Instagram [@handle]</a></li><li><a href="#">Skool community [name and link]</a></li></ul></div>
 <div><p class="h">Info</p><ul><li><a href="#">Privacy policy</a></li><li><a href="#">Terms and conditions</a></li><li><a href="#">Cookies</a></li></ul></div>
 </div><hr class="line" style="background:rgba(255,255,255,.4);margin:48px 0 20px"><p class="ps" style="color:#FFFFFF">&#169; TrudeThecla</p></div></footer>'''
