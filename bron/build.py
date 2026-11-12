@@ -341,7 +341,7 @@ elif PREVIEW:
     en_contact = en_contact.replace(" FORM-ATTR", "")
 else:
     en_contact = re.sub(r'<form class="buy" id="cform".*?</form>', gen_en.optin_en(), en_contact, flags=re.S)
-page("en/contact.html", "Contact · TrudeThecla | ROOTS", "A question, an idea, or a feeling that it is time for something different? Message Trude on WhatsApp, book a free introductory call or send a message.", fix(en_contact, "en"), lang="en")
+page("en/contact.html", "Contact · TrudeThecla | ROOTS", "A question, an idea, or a feeling that it is time for something different? Message Trude on WhatsApp, book a free consultation (20 min) or send a message.", fix(en_contact, "en"), lang="en")
 page("en/programmes.html", "Programmes · TrudeThecla | ROOTS", "Work with your pattern in the individual programme, the Trigger Breakfree Challenge or three sessions of Havening and hypnosis.", fix(en_img(gen_prog_en.EN_PROGRAMMES), "en"), lang="en")
 page("en/programmes/individual-programme.html", "Individual programme · TrudeThecla | ROOTS", "Eight online sessions with Trude Kuin, on your own pattern and at your pace. So your old pattern no longer automatically decides how you react.", fix(en_img(gen_prog_en.EN_INDIVIDUAL), "en"), lang="en")
 page("en/programmes/havening-and-hypnosis.html", "Havening & hypnosis · TrudeThecla | ROOTS", "Three online sessions of Havening and hypnosis for one theme: a reaction that keeps coming back, tension around a moment, or a goal you get stuck on.", fix(en_img(gen_prog_en.EN_HAVENING), "en"), lang="en")
