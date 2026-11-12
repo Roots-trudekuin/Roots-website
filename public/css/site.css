@@ -113,7 +113,17 @@ a{color:#8C7240}a:hover{color:#333333}
 html{scroll-behavior:smooth}
 .wa{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;align-items:center;gap:10px;background:#BD9D60;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:14px 20px;border-radius:40px;box-shadow:0 10px 26px rgba(120,95,60,.28)}
 .wa:hover{background:#A98A50;color:#FFFFFF}
-@media (max-width:900px){.wa span{display:none}.wa{padding:15px;right:16px;bottom:16px}}
+.wabub{position:fixed;right:22px;bottom:92px;z-index:51;width:300px;background:#FFFFFF;border-radius:14px;padding:20px 20px 18px;box-shadow:0 18px 44px rgba(120,95,60,.25);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .35s,transform .35s}
+.wabub.open{opacity:1;transform:none;pointer-events:auto}
+.wabub:after{content:"";position:absolute;right:34px;bottom:-8px;width:16px;height:16px;background:#FFFFFF;transform:rotate(45deg)}
+.wahd{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.wahd img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.wahd b{display:block;font-weight:600;font-size:15px;color:#333333}
+.wahd span{font-size:12px;color:#8C7240}
+.wabub p{font-size:15px;line-height:1.5;margin:0 0 14px;color:#333333}
+.wabub .btn{display:block;text-align:center;padding:12px 18px}
+.wax{position:absolute;right:10px;top:8px;background:none;border:0;font-size:22px;line-height:1;color:#8C7240;cursor:pointer;padding:4px}
+@media (max-width:900px){.wa{padding:13px 16px;right:16px;bottom:16px}.wabub{right:16px;bottom:82px;width:min(300px,calc(100vw - 32px))}}
 .mnav{display:none}
 @media (max-width:900px){
  .hdr{position:relative}

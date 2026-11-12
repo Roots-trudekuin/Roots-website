@@ -162,7 +162,9 @@ def fix(html, lang="nl"):
 
 def page(path, title, desc, body, lang="nl", noindex=False):
     robots = '<meta name="robots" content="noindex">' if noindex else ""
-    wa_float = '<a class="wa" href="/contact" aria-label="Laten we praten"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.6A8 8 0 1 1 21 12z"/></svg><span>Laten we praten</span></a>' if lang == "nl" and path != "contact.html" else ""
+    wa_float = (f'''<div class="wabub" id="wabub" role="dialog" aria-label="App Trude via WhatsApp"><button class="wax" type="button" aria-label="Sluiten">&#215;</button><div class="wahd"><img src="/img/portret-rond.jpg" alt=""><div><b>Trude Kuin</b><span>ROOTS</span></div></div><p>Hoi, ik ben Trude. Een vraag? App me gerust.</p><a class="btn" href="{cfg["_wa"]}" target="_blank" rel="noopener">Appen</a></div>
+<a class="wa" href="{cfg["_wa"]}" target="_blank" rel="noopener" aria-label="App Trude via WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg><span>Appen?</span></a>
+<script>(function(){{var b=document.getElementById("wabub");if(!b)return;var k="wabub-dicht",s=false;try{{s=sessionStorage.getItem(k)==="1"}}catch(e){{}}if(s)return;var shown=false;function show(){{if(shown)return;shown=true;b.classList.add("open")}}setTimeout(show,6000);window.addEventListener("scroll",function(){{if(window.scrollY>window.innerHeight*.6)show()}},{{passive:true}});b.querySelector(".wax").addEventListener("click",function(){{b.classList.remove("open");try{{sessionStorage.setItem(k,"1")}}catch(e){{}}}});}})();</script>''') if cfg["_wa"] and lang == "nl" else ""
     html = f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -196,7 +198,17 @@ MOBILE_CSS = """
 html{scroll-behavior:smooth}
 .wa{position:fixed;right:22px;bottom:22px;z-index:50;display:flex;align-items:center;gap:10px;background:#BD9D60;color:#FFFFFF;text-decoration:none;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:14px 20px;border-radius:40px;box-shadow:0 10px 26px rgba(120,95,60,.28)}
 .wa:hover{background:#A98A50;color:#FFFFFF}
-@media (max-width:900px){.wa span{display:none}.wa{padding:15px;right:16px;bottom:16px}}
+.wabub{position:fixed;right:22px;bottom:92px;z-index:51;width:300px;background:#FFFFFF;border-radius:14px;padding:20px 20px 18px;box-shadow:0 18px 44px rgba(120,95,60,.25);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .35s,transform .35s}
+.wabub.open{opacity:1;transform:none;pointer-events:auto}
+.wabub:after{content:"";position:absolute;right:34px;bottom:-8px;width:16px;height:16px;background:#FFFFFF;transform:rotate(45deg)}
+.wahd{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.wahd img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.wahd b{display:block;font-weight:600;font-size:15px;color:#333333}
+.wahd span{font-size:12px;color:#8C7240}
+.wabub p{font-size:15px;line-height:1.5;margin:0 0 14px;color:#333333}
+.wabub .btn{display:block;text-align:center;padding:12px 18px}
+.wax{position:absolute;right:10px;top:8px;background:none;border:0;font-size:22px;line-height:1;color:#8C7240;cursor:pointer;padding:4px}
+@media (max-width:900px){.wa{padding:13px 16px;right:16px;bottom:16px}.wabub{right:16px;bottom:82px;width:min(300px,calc(100vw - 32px))}}
 .mnav{display:none}
 @media (max-width:900px){
  .hdr{position:relative}
