@@ -55,6 +55,7 @@ import gen_pages  # noqa: E402
 import gen_en  # noqa: E402
 import gen_en_pages  # noqa: E402
 import gen_prog  # noqa: E402
+import gen_prog_en  # noqa: E402
 
 from gen_common import header, footer, hero, optin_card, CHECK  # noqa: E402
 
@@ -66,6 +67,7 @@ LINKS = [
     ("EN-Home.dc.html#handbook", "/en#handbook"), ("EN-Home.dc.html", "/en"),
     ("EN-Challenge.dc.html", "/en/challenge"), ("EN-Insights.dc.html", "/en/insights"),
     ("EN-About.dc.html", "/en/about-trude"), ("EN-Contact.dc.html", "/en/contact"),
+    ("EN-Programmes.dc.html", "/en/programmes"), ("EN-Individual.dc.html", "/en/programmes/individual-programme"), ("EN-Havening.dc.html", "/en/programmes/havening-and-hypnosis"),
     ("Main.dc.html#handboek", "/#handboek"), ("Main.dc.html", "/"),
     ("Optin.dc.html", "/#handboek"),
     ("Challenge.dc.html", "/challenge"),
@@ -75,7 +77,7 @@ LINKS = [
     ("Programmas.dc.html", "/programmas"),
     ("Individueel.dc.html", "/programmas/individueel-programma"),
     ("Havening.dc.html", "/programmas/havening-en-hypnose"),
-] + [(gen_prog.thema_href(t[0]), f"/programmas/havening-en-hypnose/{t[0]}") for t in gen_prog.THEMAS]
+] + [(gen_prog.thema_href(t[0]), f"/programmas/havening-en-hypnose/{t[0]}") for t in gen_prog.THEMAS] + [(gen_prog_en.theme_href(t[0]), f"/en/programmes/havening-and-hypnosis/{t[0]}") for t in gen_prog_en.THEMES]
 
 MARKERS = {"WA-DIRECT": "_wa", "PAY-IND": "individueel_betaallink", "PAY-HAV": "havening_betaallink", "BOOK-KM": "kennismaking_url"}
 
@@ -162,9 +164,11 @@ def fix(html, lang="nl"):
 
 def page(path, title, desc, body, lang="nl", noindex=False):
     robots = '<meta name="robots" content="noindex">' if noindex else ""
-    wa_float = (f'''<div class="wabub" id="wabub" role="dialog" aria-label="App Trude via WhatsApp"><button class="wax" type="button" aria-label="Sluiten">&#215;</button><div class="wahd"><img src="/img/portret-rond.jpg" alt=""><div><b>Trude Kuin</b><span>ROOTS</span></div></div><p>Hoi, ik ben Trude. Een vraag? App me gerust.</p><a class="btn" href="{cfg["_wa"]}" target="_blank" rel="noopener">Appen</a></div>
-<a class="wa" href="{cfg["_wa"]}" target="_blank" rel="noopener" aria-label="App Trude via WhatsApp"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg><span>Appen?</span></a>
-<script>(function(){{var b=document.getElementById("wabub");if(!b)return;var k="wabub-dicht",s=false;try{{s=sessionStorage.getItem(k)==="1"}}catch(e){{}}if(s)return;var shown=false;function show(){{if(shown)return;shown=true;b.classList.add("open")}}setTimeout(show,6000);window.addEventListener("scroll",function(){{if(window.scrollY>window.innerHeight*.6)show()}},{{passive:true}});b.querySelector(".wax").addEventListener("click",function(){{b.classList.remove("open");try{{sessionStorage.setItem(k,"1")}}catch(e){{}}}});}})();</script>''') if cfg["_wa"] and lang == "nl" else ""
+    W = {"nl": {"aria": "App Trude via WhatsApp", "close": "Sluiten", "msg": "Hoi, ik ben Trude. Een vraag? App me gerust.", "btn": "Appen", "float": "Appen?", "img": "/img/portret-rond.jpg"},
+         "en": {"aria": "Message Trude on WhatsApp", "close": "Close", "msg": "Hi, I&#8217;m Trude. A question? Feel free to message me.", "btn": "Message me", "float": "Message me?", "img": "/img/portret-rond-en.jpg"}}[lang]
+    wa_float = (f'''<div class="wabub" id="wabub" role="dialog" aria-label="{W["aria"]}"><button class="wax" type="button" aria-label="{W["close"]}">&#215;</button><div class="wahd"><img src="{W["img"]}" alt=""><div><b>Trude Kuin</b><span>ROOTS</span></div></div><p>{W["msg"]}</p><a class="btn" href="{cfg["_wa"]}" target="_blank" rel="noopener">{W["btn"]}</a></div>
+<a class="wa" href="{cfg["_wa"]}" target="_blank" rel="noopener" aria-label="{W["aria"]}"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 1.7.7 2.4.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg><span>{W["float"]}</span></a>
+<script>(function(){{var b=document.getElementById("wabub");if(!b)return;var k="wabub-dicht",s=false;try{{s=sessionStorage.getItem(k)==="1"}}catch(e){{}}if(s)return;var shown=false;function show(){{if(shown)return;shown=true;b.classList.add("open")}}setTimeout(show,6000);window.addEventListener("scroll",function(){{if(window.scrollY>window.innerHeight*.6)show()}},{{passive:true}});b.querySelector(".wax").addEventListener("click",function(){{b.classList.remove("open");try{{sessionStorage.setItem(k,"1")}}catch(e){{}}}});}})();</script>''') if cfg["_wa"] and not path.endswith("contact.html") else ""
     html = f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -330,13 +334,19 @@ page("en/insights.html", "Insights · TrudeThecla | ROOTS",
 page("en/about-trude.html", "About Trude · TrudeThecla | ROOTS",
      "Since 1988 Trude Kuin has guided people through personal change. She developed ROOTS: the method that lets you switch off your pattern at the source.",
      fix(en_img(gen_en_pages.EN_ABOUT), "en"), lang="en")
-en_contact = en_img(gen_en_pages.EN_CONTACT)
+en_contact = en_img(gen_prog_en.EN_CONTACT2)
 if c_act:
-    en_contact = en_contact.replace('<form class="card" style="margin-top:20px">', f'<form class="card" style="margin-top:20px" action="{c_act}" method="post"' + (' enctype="text/plain"' if c_act.startswith("mailto:") else "") + ">")
-    en_contact = en_contact.replace('<input id="c1" type="text">', '<input id="c1" name="naam" type="text" required>').replace('<input id="c2" type="email">', '<input id="c2" name="email" type="email" required>').replace('<textarea id="c3" rows="6"></textarea>', '<textarea id="c3" name="bericht" rows="6" required></textarea>').replace('<button class="btn" type="button">Send</button>', '<button class="btn" type="submit">Send</button>')
+    en_contact = en_contact.replace("FORM-ATTR", f'action="{c_act}" method="post"' + (' enctype="text/plain"' if c_act.startswith("mailto:") else ""))
+elif PREVIEW:
+    en_contact = en_contact.replace(" FORM-ATTR", "")
 else:
-    en_contact = cut(en_contact, '<form class="card" style="margin-top:20px">', "</form>")
-page("en/contact.html", "Contact · TrudeThecla | ROOTS", "A question about the Trigger Breakfree Challenge, signing up or your access? Send Trude a message.", fix(en_contact, "en"), lang="en")
+    en_contact = re.sub(r'<form class="buy" id="cform".*?</form>', gen_en.optin_en(), en_contact, flags=re.S)
+page("en/contact.html", "Contact · TrudeThecla | ROOTS", "A question, an idea, or a feeling that it is time for something different? Message Trude on WhatsApp, book a free introductory call or send a message.", fix(en_contact, "en"), lang="en")
+page("en/programmes.html", "Programmes · TrudeThecla | ROOTS", "Work with your pattern in the individual programme, the Trigger Breakfree Challenge or three sessions of Havening and hypnosis.", fix(en_img(gen_prog_en.EN_PROGRAMMES), "en"), lang="en")
+page("en/programmes/individual-programme.html", "Individual programme · TrudeThecla | ROOTS", "Eight online sessions with Trude Kuin, on your own pattern and at your pace. So your old pattern no longer automatically decides how you react.", fix(en_img(gen_prog_en.EN_INDIVIDUAL), "en"), lang="en")
+page("en/programmes/havening-and-hypnosis.html", "Havening & hypnosis · TrudeThecla | ROOTS", "Three online sessions of Havening and hypnosis for one theme: a reaction that keeps coming back, tension around a moment, or a goal you get stuck on.", fix(en_img(gen_prog_en.EN_HAVENING), "en"), lang="en")
+for slug, (t, sub, body) in gen_prog_en.THEME_PAGES.items():
+    page(f"en/programmes/havening-and-hypnosis/{slug}.html", f"{re.sub('&[^;]+;', '', t)} · Havening & hypnosis · TrudeThecla | ROOTS", re.sub('&#8217;', '’', sub), fix(en_img(body), "en"), lang="en")
 page("en/thank-you.html", "Your handbook is on its way · TrudeThecla | ROOTS", "Your Pattern Reset Handbook is on its way to your inbox.", fix(en_img(gen_en_pages.EN_THANKS), "en"), lang="en", noindex=True)
 page("en/welcome.html", "Welcome · TrudeThecla | ROOTS", "Welcome to the Trigger Breakfree Challenge.", fix(en_img(gen_en_pages.EN_WELCOME), "en"), lang="en", noindex=True)
 

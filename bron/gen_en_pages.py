@@ -27,7 +27,7 @@ def hero_en(kick, h1, leads, right, extra=""):
 </div></div></section>'''
 
 
-EN_CHALLENGE = header_en("chal") + f'''
+EN_CHALLENGE = header_en("prog") + f'''
 <section style="padding:90px 0 110px;position:relative;overflow:hidden"><div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div><div class="w"><div class="row top" style="gap:72px">
 <div class="c1" style="flex:1.25 1 0">
 <p class="kick">Trigger Breakfree Challenge &#183; 7 days</p>
@@ -204,8 +204,8 @@ EN_INSIGHTS = header_en("ins") + hero_en(
 <section id="articles" class="sec white"><div class="w"><p class="kick">Articles</p><h2 class="h2">Read more</h2><p class="p">The first articles are coming soon.</p></div></section>
 <section id="videos" class="sec"><div class="w"><p class="kick">Videos</p><h2 class="h2">Watch and recognise</h2><p class="p">The first videos are coming soon.</p></div></section>
 <section class="rose" style="padding:90px 0"><div class="wn" style="text-align:center">
-<h2 class="h2">From reading and watching to doing</h2><p class="lead">In the Trigger Breakfree Challenge you work with one pattern of your own for seven days.</p>
-<a class="btn" href="EN-Challenge.dc.html" style="background:#FFFFFF;color:#333333">View the Trigger Breakfree Challenge</a></div></section>
+<h2 class="h2">From reading and watching to doing</h2><p class="lead">Work with one pattern of your own, one to one with me or in a group.</p>
+<a class="btn" href="EN-Programmes.dc.html" style="background:#FFFFFF;color:#333333">View the programmes</a></div></section>
 ''' + footer_en()
 
 EN_ABOUT = header_en("about") + hero_en(
@@ -251,7 +251,7 @@ EN_ABOUT = header_en("about") + hero_en(
 <p class="kick">Why ROOTS exists</p>
 <h2 class="h2">Becoming who you could have been. Before you look back in twenty years and think: if only I had known this sooner.</h2>
 <p class="p">No guru. No lifelong guidance. A guide who teaches you the craft, so you can adjust your patterns yourself. Later on too. Without me.</p>
-<div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:34px"><a class="btn" href="EN-Challenge.dc.html">View the Challenge</a><a class="btn2" href="EN-Home.dc.html#handbook" style="align-self:center">Or start with the free handbook &#8594;</a></div>
+<div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:34px"><a class="btn" href="EN-Contact.dc.html">Work with me</a><a class="btn2" href="EN-Contact.dc.html" style="align-self:center">Or get in touch first &#8594;</a></div>
 </div></section>
 ''' + footer_en()
 

@@ -4,7 +4,7 @@ PORTRAIT_EN = "/_blob/b75005e3606297823a6d47a9e3562265"
 
 def header_en(active="home"):
     logo = f'<a class="logo" href="EN-Home.dc.html"><img src="{ICON}" alt=""><span><span class="wm">ROOTS</span><span class="sub">by TrudeThecla</span></span></a>'
-    items = [("EN-Home.dc.html#handbook", "Start here", "home"), ("EN-Challenge.dc.html", "Challenge", "chal"),
+    items = [("EN-Home.dc.html#handbook", "Start here", "home"), ("EN-Programmes.dc.html", "Programmes", "prog"),
              ("EN-Insights.dc.html", "Insights", "ins"), ("EN-About.dc.html", "About Trude", "about"), ("EN-Contact.dc.html", "Contact", "contact")]
     nav = ''.join(f'<a href="{h}"' + (' class="on"' if k == active else '') + f'>{l}</a>' for h, l, k in items)
     return (f'<header class="hdr"><div class="in">{logo}<nav class="nav" aria-label="Main menu">{nav}</nav>'
@@ -44,7 +44,7 @@ def wish(t, x): return f'<div class="card" style="padding:36px"><p class="cap">{
 def footer_en():
     return f'''<footer class="ftr"><div class="w"><div class="cols">
 <div style="flex:1 1 260px"><div class="wm">ROOTS</div><p class="ps" style="margin-top:10px;color:#FFFFFF">Switch off your pattern at the source.</p><p class="ps" style="margin-top:22px;color:#FFFFFF">A method by TrudeThecla.</p></div>
-<div><p class="h">Website</p><ul><li><a href="EN-Home.dc.html#handbook">Start here</a></li><li><a href="EN-Challenge.dc.html">Trigger Breakfree Challenge</a></li><li><a href="EN-Insights.dc.html">Insights</a></li><li><a href="EN-Home.dc.html#handbook">Free handbook</a></li><li><a href="EN-About.dc.html">About Trude</a></li></ul></div>
+<div><p class="h">Website</p><ul><li><a href="EN-Home.dc.html#handbook">Start here</a></li><li><a href="EN-Programmes.dc.html">Programmes</a></li><li><a href="EN-Challenge.dc.html">Trigger Breakfree Challenge</a></li><li><a href="EN-Insights.dc.html">Insights</a></li><li><a href="EN-Home.dc.html#handbook">Free handbook</a></li><li><a href="EN-About.dc.html">About Trude</a></li></ul></div>
 <div><p class="h">Contact</p><ul><li><a href="EN-Contact.dc.html">Send a message</a></li><li><a href="#">Instagram [@handle]</a></li><li><a href="#">Skool community [name and link]</a></li></ul></div>
 <div><p class="h">Info</p><ul><li><a href="#">Privacy policy</a></li><li><a href="#">Terms and conditions</a></li><li><a href="#">Cookies</a></li></ul></div>
 </div><hr class="line" style="background:rgba(255,255,255,.4);margin:48px 0 20px"><p class="ps" style="color:#FFFFFF">&#169; TrudeThecla</p></div></footer>'''
@@ -60,7 +60,7 @@ EN = header_en("home") + f'''
 <p class="lead" style="margin-bottom:36px">Only afterwards do you see it: there it went again. Even though you know exactly where it comes from.</p>
 <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
 <a class="btn" href="#">Yes, send me the free handbook</a>
-<a class="btn2" href="EN-Challenge.dc.html">Or go straight to the Trigger Breakfree Challenge &#8594;</a>
+<a class="btn2" href="EN-Contact.dc.html">Or work with me directly &#8594;</a>
 </div>
 </div>
 <div class="c1" style="flex:1 1 0">{optin_en()}</div>
@@ -134,7 +134,7 @@ EN = header_en("home") + f'''
 <h2 class="h2">I&#8217;m Trude.</h2>
 <p class="p">Since 1988 I have guided people through personal change. As a consultant, coach, hypnotherapist and Havening practitioner. Thousands of people.</p>
 <p class="p">All those years, one question stayed with me: how do I help people change in a way that gives them lasting influence over it themselves? Out of that question, ROOTS grew: the method that lets you switch off your pattern at the source.</p>
-<a class="btn2" href="EN-About.dc.html">Read my story &#8594;</a>
+<div style="display:flex;gap:26px;align-items:center;flex-wrap:wrap"><a class="btn" href="EN-Contact.dc.html">Work with me</a><a class="btn2" href="EN-About.dc.html">Read my story &#8594;</a></div>
 </div>
 </div></div></section>
 
@@ -143,7 +143,7 @@ EN = header_en("home") + f'''
 <h2 class="h2" style="text-align:center;max-width:760px;margin-left:auto;margin-right:auto">Two paths. The same source.</h2>
 <div class="grid2" style="margin-top:50px">
 <div class="card"><p class="cap">Understand first &#183; free</p><h3 class="h3" style="font-size:26px;font-weight:400">Pattern Reset Handbook</h3><p class="p">Read why your pattern keeps coming back, and watch the masterclass via the link in the handbook. At your own pace.</p><a class="btn" href="#">Send me the handbook</a></div>
-<div class="card" style="border:1px solid #BD9D60"><p class="cap">Experience it now &#183; 7 days</p><h3 class="h3" style="font-size:26px;font-weight:400">Trigger Breakfree Challenge</h3><p class="p">You choose one pattern of your own. You discover what switches it on for you, and experience what it&#8217;s like when it no longer starts automatically. With me alongside you.</p><a class="btn" href="EN-Challenge.dc.html">View the Challenge</a></div>
+<div class="card" style="border:1px solid #BD9D60"><p class="cap">Start now &#183; with me</p><h3 class="h3" style="font-size:26px;font-weight:400">Programmes</h3><p class="p">You choose one pattern of your own. You discover what switches it on for you, and experience what it&#8217;s like when it no longer starts automatically. One to one with me, or soon in the Trigger Breakfree Challenge.</p><a class="btn" href="EN-Programmes.dc.html">View the programmes</a></div>
 </div>
 </div></section>
 ''' + footer_en()
