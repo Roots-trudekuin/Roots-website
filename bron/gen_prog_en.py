@@ -7,7 +7,7 @@ PAY_IND, PAY_HAV, BOOK = "PAY-IND", "PAY-HAV", "BOOK-KM"
 PRIJS_IND, PRIJS_HAV = "&#8364;1,335", "&#8364;500"
 
 
-def intro_call(label="Book a free 20-minute introductory call"):
+def intro_call(label="Book a free consultation (20 min)"):
     return f'<a class="btn2" href="{BOOK}">{label} &#8594;</a>'
 
 
@@ -20,7 +20,7 @@ def offer(cap, title, items, prijs, prijs_sub, btn_label, btn_href):
 <p style="font-size:34px;font-weight:300;margin:0;color:#333333">{prijs}</p>
 <p class="ps" style="font-size:14px;margin:4px 0 0">{prijs_sub}</p>
 <a class="btn" href="{btn_href}" style="display:block;margin-top:22px">{btn_label}</a>
-<p class="ps" style="text-align:center;margin-top:16px">{intro_call("Want to meet first? Book 20 minutes for free")}</p>
+<p class="ps" style="text-align:center;margin-top:16px">{intro_call("Book a free consultation (20 min)")}</p>
 <p class="ps" style="text-align:center;margin-top:12px"><a class="btn2" href="EN-Contact.dc.html">Rather ask a question first? Get in touch &#8594;</a></p>
 </div>'''
 
@@ -63,7 +63,7 @@ EN_PROGRAMMES = header_en("prog") + hero_en(
 <p class="kick">Not sure what suits you?</p>
 <h2 class="h2">Let&#8217;s talk for 20 minutes.</h2>
 <p class="p">You tell me what you run into. I&#8217;ll tell you honestly which programme fits, or that none of them does. Free and online.</p>
-<div style="display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap"><a class="btn" href="{BOOK}">Book a free introductory call</a><a class="btn2" href="EN-Contact.dc.html">Or get in touch &#8594;</a></div>
+<div style="display:flex;gap:26px;justify-content:center;align-items:center;flex-wrap:wrap"><a class="btn" href="{BOOK}">Book a free consultation (20 min)</a><a class="btn2" href="EN-Contact.dc.html">Or get in touch &#8594;</a></div>
 </div></section>
 ''' + footer_en()
 
@@ -143,7 +143,7 @@ EN_INDIVIDUAL = header_en("prog") + hero_en(
 {faq("&#8220;I&#8217;ve already done so much.&#8221;", "Exactly. Everything you did worked on your story, your understanding or your behaviour. This works on the layer underneath.")}
 {faq("&#8220;Do I have to go back to the past again?&#8221;", "No. We are not looking for a new explanation. We look for the piece your survival system uses now.")}
 {faq("&#8220;Does this work online?&#8221;", "Yes. All sessions are online, from your own home.")}
-{faq("&#8220;I don&#8217;t know if this is right for me.&#8221;", "Then book a free 20-minute introductory call first. We&#8217;ll see together whether it fits.")}
+{faq("&#8220;I don&#8217;t know if this is right for me.&#8221;", "Then book a free consultation (20 min) first. We&#8217;ll see together whether it fits.")}
 <div style="border-top:1px solid #E3D3BF"></div>
 </div></section>
 
@@ -151,7 +151,7 @@ EN_INDIVIDUAL = header_en("prog") + hero_en(
 <h2 class="h2">Ready to begin?</h2>
 <p class="lead">Eight online sessions with me, on your pattern. {PRIJS_IND} for the full programme.</p>
 <a class="btn" href="{PAY_IND}" style="background:#FFFFFF;color:#333333">Yes, I want to start</a>
-<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Or book a free 20-minute introductory call first &#8594;</a></p>
+<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Or book a free consultation (20 min) first &#8594;</a></p>
 <p class="lead" style="margin-top:36px">And you are going to make it!</p>
 <p class="lead" style="font-weight:500">Love, Trude</p>
 </div></section>
@@ -214,7 +214,7 @@ HAV_FAQ = f'''<section class="sec"><div class="wn">
 {faq("Does Havening work online?", "Yes. You do the touch yourself, and I guide you. All you need is a quiet place and a laptop, tablet or phone with a camera. With your phone on a stand, you can sit or lie down really comfortably.")}
 {faq("Do I have to tell you everything?", "No. You tell me what you want to tell me. For Havening it is not necessary to explain everything.")}
 {faq("What is the difference with the individual programme?", IND_DIFF)}
-{faq("Not sure what fits you?", "Book a free 20-minute introductory call. We&#8217;ll look at it together.")}
+{faq("Not sure what fits you?", "Book a free consultation (20 min). We&#8217;ll look at it together.")}
 <div style="border-top:1px solid #E3D3BF"></div>
 </div></section>'''
 
@@ -224,7 +224,7 @@ def close_band(title):
 <h2 class="h2">{title}</h2>
 <p class="lead">3 online sessions of 1.5 hours. {PRIJS_HAV} together.</p>
 <a class="btn" href="{PAY_HAV}" style="background:#FFFFFF;color:#333333">Book 3 sessions</a>
-<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Or book a free 20-minute introductory call first &#8594;</a></p>
+<p class="ps" style="margin-top:20px"><a href="{BOOK}" style="color:#FFFFFF">Or book a free consultation (20 min) first &#8594;</a></p>
 <p class="lead" style="margin-top:36px;font-weight:500">Love, Trude</p>
 </div></section>'''
 
@@ -273,7 +273,7 @@ EN_HAVENING = header_en("prog") + hero_en(
 <h2 class="h2" style="text-align:center">What is in your way?</h2>
 <div class="grid3" style="margin-top:46px">
 {''.join(themecard(s, t, sub) for s, t, sub, *_ in THEMES)}
-<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Is your block not listed?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Tell me what you run into. Then we&#8217;ll see together whether this fits.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Book a free introductory call &#8594;</a></div>
+<div class="card" style="background:#FFFFFF;border:1px solid #BD9D60;display:flex;flex-direction:column"><h3 class="h3" style="font-size:22px;font-weight:400">Is your block not listed?</h3><p class="ps" style="font-size:16px;flex:1 1 auto">Tell me what you run into. Then we&#8217;ll see together whether this fits.</p><a class="btn2" href="{BOOK}" style="align-self:flex-start;margin-top:18px">Book a free consultation (20 min) &#8594;</a></div>
 </div>
 </div></section>
 <section class="sec"><div class="wn">
@@ -339,12 +339,12 @@ EN_CONTACT2 = header_en("contact") + f'''
 <p class="lead">A question, an idea, or just a feeling that it&#8217;s time for something different? Tell me. It doesn&#8217;t have to be completely clear yet. I read everything myself.</p>
 <div style="display:flex;flex-direction:column;gap:14px;margin:34px 0 0;max-width:420px">
 <a class="btn" href="WA-DIRECT">Message me on WhatsApp</a>
-<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Book a free 20-minute introductory call &#8594;</a>
+<a class="btn2" href="BOOK-KM" style="align-self:flex-start">Book a free consultation (20 min) &#8594;</a>
 </div>
 <p class="kick" style="margin-top:64px">What happens next?</p>
 <div style="display:flex;flex-direction:column;gap:22px">
 <div class="step"><div class="num">1</div><div><h3 class="h3">I read your message</h3><p class="ps">Myself, and with attention.</p></div></div>
-<div class="step"><div class="num">2</div><div><h3 class="h3">I get back to you</h3><p class="ps">With an answer, a question in return, or a suggestion for an introductory call.</p></div></div>
+<div class="step"><div class="num">2</div><div><h3 class="h3">I get back to you</h3><p class="ps">With an answer, a question in return, or a suggestion for a free consultation.</p></div></div>
 <div class="step"><div class="num">3</div><div><h3 class="h3">We look at what fits</h3><p class="ps">Honestly. Even if that means something else suits you better.</p></div></div>
 </div>
 </div>
