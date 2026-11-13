@@ -358,3 +358,52 @@ EN_CONTACT2 = header_en("contact") + f'''
 </div>
 </div></div></section>
 ''' + footer_en()
+
+from gen_en import header_en_min
+
+EN_MASTERCLASS = header_en_min() + f'''
+<section style="padding:90px 0 60px;position:relative;overflow:hidden"><div class="dots hide-m" style="position:absolute;right:0;top:0;width:280px;height:220px;opacity:.5"></div><div class="w"><div class="row top" style="gap:72px">
+<div class="c1" style="flex:1.25 1 0">
+<p class="kick">Free masterclass</p>
+<h1 class="h1">Switch off your pattern <span class="cam">at the source</span></h1>
+<p class="lead">Why your pattern comes back even though you understood it long ago. And what <em>is</em> needed to update it.</p>
+<div class="vid" style="aspect-ratio:16/9;margin-top:10px"><img src="{PORTRAIT}" alt="Still from the masterclass"><div class="play">{PLAY}</div></div>
+</div>
+<div class="c1" style="flex:1 1 0;position:sticky;top:24px"><div class="buy">
+<p class="cap">Your next step</p>
+<h2 class="h2" style="font-size:26px;margin-bottom:22px">Do it with one pattern of your own</h2>
+<div style="border:1px solid #BD9D60;padding:22px;border-radius:2px">
+<p class="cap" style="margin-bottom:6px">1 &#183; Start now</p>
+<h3 class="h3">Individual programme</h3>
+<p class="ps" style="font-size:15px;margin-bottom:16px">8 online sessions with me, on your pattern. {PRIJS_IND}</p>
+<a class="btn" href="EN-Individual.dc.html" style="display:block">Yes, I want to start now</a></div>
+<div style="border:1px solid #E0CFC0;padding:22px;border-radius:2px;margin-top:16px">
+<p class="cap" style="margin-bottom:6px">2 &#183; In a group</p>
+<h3 class="h3">Trigger Breakfree Challenge</h3>
+<p class="ps" style="font-size:15px;margin-bottom:16px">7 days, with the community around you. Coming soon in English.</p>
+<a class="btn" href="WAIT-EN" style="display:block">Join the waiting list</a></div>
+</div></div>
+</div></div></section>
+
+<section style="padding:20px 0 90px"><div class="w"><div style="max-width:740px">
+<h2 class="h2" style="font-size:30px">In this masterclass I explain:</h2>
+<ul class="list">
+<li>{CHECK}<span>why insight and facing your pattern are two different processes, and why all your understanding doesn&#8217;t help you in the moment itself</span></li>
+<li>{CHECK}<span>what really switches your pattern on, and why that isn&#8217;t your story</span></li>
+<li>{CHECK}<span>why you can&#8217;t reach it through understanding or practice, and what <em>is</em> needed to update it</span></li>
+</ul>
+</div></div></section>
+
+<section class="sec white"><div class="w">
+<div class="wn" style="padding:0;text-align:center;max-width:820px;margin:0 auto">
+<p class="kick">What now?</p>
+<h2 class="h2">Understanding is not the same as experiencing.</h2>
+<p class="p">In the masterclass I show you <em>that</em> it works this way. Your pattern only changes when you do it yourself, with one pattern of your own and with someone there who sees what you can&#8217;t see in that moment. You can choose how.</p>
+</div>
+<div class="grid2" style="margin-top:46px;max-width:980px;margin-left:auto;margin-right:auto">
+<div class="card" style="border:1px solid #BD9D60;background:#FAF1E8"><p class="cap">1 &#183; Start now &#183; one to one</p><h3 class="h3" style="font-size:26px;font-weight:400">Individual programme</h3><p class="p">Eight online sessions with me. The same steps as in the Challenge, fully tailored to your pattern and your pace. You can begin straight away.</p><p class="ps" style="font-weight:600;margin-bottom:20px">{PRIJS_IND} &#183; 8 online sessions</p><a class="btn" href="EN-Individual.dc.html">Yes, I want to start now</a></div>
+<div class="card" style="background:#FAF1E8"><p class="cap">2 &#183; In a group &#183; 7 days</p><h3 class="h3" style="font-size:26px;font-weight:400">Trigger Breakfree Challenge</h3><p class="p">Seven days, one pattern of your own. A short video and one thing to do every day, together with others who recognise this. I&#8217;m there with you.</p><p class="ps" style="font-weight:600;margin-bottom:20px">Coming soon in English</p><a class="btn" href="WAIT-EN">Join the waiting list</a></div>
+</div>
+</div></section>
+<section style="padding:40px 0"><div class="w" style="text-align:center"><p class="ps">&#169; TrudeThecla &#183; <a href="#">Privacy policy</a></p></div></section>
+'''

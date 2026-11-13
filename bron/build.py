@@ -347,6 +347,14 @@ page("en/programmes/individual-programme.html", "Individual programme · TrudeTh
 page("en/programmes/havening-and-hypnosis.html", "Havening & hypnosis · TrudeThecla | ROOTS", "Three online sessions of Havening and hypnosis for one theme: a reaction that keeps coming back, tension around a moment, or a goal you get stuck on.", fix(en_img(gen_prog_en.EN_HAVENING), "en"), lang="en")
 for slug, (t, sub, body) in gen_prog_en.THEME_PAGES.items():
     page(f"en/programmes/havening-and-hypnosis/{slug}.html", f"{re.sub('&[^;]+;', '', t)} · Havening & hypnosis · TrudeThecla | ROOTS", re.sub('&#8217;', '’', sub), fix(en_img(body), "en"), lang="en")
+if cfg.get("masterclass_video_url_en") or PREVIEW:
+    mce = gen_prog_en.EN_MASTERCLASS
+    if cfg.get("masterclass_video_url_en"):
+        mce = re.sub(r'<div class="vid" style="aspect-ratio:16/9;margin-top:10px">.*?</svg></div></div>',
+                     f'<div class="vid" style="aspect-ratio:16/9;margin-top:10px"><iframe src="{cfg["masterclass_video_url_en"]}" title="Masterclass Switch Off Your Pattern at the Source" style="width:100%;height:100%;border:0" allow="autoplay; fullscreen" allowfullscreen></iframe></div>', mce, flags=re.S)
+    mce = mce.replace('href="WAIT-EN"', f'href="{cfg.get("challenge_wachtlijst_url_en") or "EN-Contact.dc.html"}"')
+    page("en/masterclass-switch-off-your-pattern.html", "Masterclass Switch Off Your Pattern at the Source · TrudeThecla | ROOTS",
+         "Free masterclass by Trude Kuin.", fix(en_img(mce), "en"), lang="en", noindex=True)
 page("en/thank-you.html", "Your handbook is on its way · TrudeThecla | ROOTS", "Your Pattern Reset Handbook is on its way to your inbox.", fix(en_img(gen_en_pages.EN_THANKS), "en"), lang="en", noindex=True)
 page("en/welcome.html", "Welcome · TrudeThecla | ROOTS", "Welcome to the Trigger Breakfree Challenge.", fix(en_img(gen_en_pages.EN_WELCOME), "en"), lang="en", noindex=True)
 
